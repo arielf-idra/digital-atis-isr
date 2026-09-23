@@ -111,3 +111,23 @@ def test_tree_as_three_elsewhere():
     assert parse("temperature tree zero dew point one eight")["temperature"] == 30
     assert parse("wind 250 degrees tree knots")["wind"] == "250/3kt"
     assert parse("QNH one zero one tree")["qnh"] == 1013
+
+
+def test_issue_1_niner_heard_as_nine_or():
+    # github.com/arielf-idra/digital-atis-isr/issues/1
+    t = ("Haifa airport, information Romeo. Valid from 1450 UTC. Runway in use 33. Right hand circuit. "
+         "Wind touchdown zone. Tree 20 degrees. 9 or knots. Varying between 280 and 340 degrees. "
+         "Visibility 10 kilometers or more. Clouds view 3,000 feet, temperature 28, dew point 20, QNH 1014 millibars")
+    p = parse(t, RUNWAYS)
+    assert p["wind"] == "320/9kt V280-340" and p["visibility"] == "10 km+"
+    assert parse("Valid from 09 or 50 UTC.")["time"] == "0950"
+
+
+def test_issue_2_heading_written_with_extra_zero():
+    # github.com/arielf-idra/digital-atis-isr/issues/2
+    t = ("Wind touchdown zone 3300 degrees. 5 knots. Varying between 270 and 350 degrees. "
+         "Clouds scattered 3300 feet.")
+    p = parse(t, RUNWAYS)
+    assert p["wind"] == "330/5kt V270-350"
+    assert p["clouds"] == "SCT 3300ft"              # only headings are shortened
+    assert "wind" not in parse("Wind 3700 degrees 5 knots")   # not a valid heading either way

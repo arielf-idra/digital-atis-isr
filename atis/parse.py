@@ -34,6 +34,10 @@ def normalize(text: str) -> str:
     t = re.sub(r"(\d)er\b", r"\1", t)                    # "29er" (two niner) -> "29"
     # Spoken digits -> numerals, then join runs of single digits ("one five" -> "15").
     t = re.sub(r"\b(" + "|".join(DIGITS) + r")\b", lambda m: DIGITS[m.group(1)], t)
+    t = re.sub(r"(?<=\d) or\b", "", t)                   # "niner" heard as "nine or": "9 or knots" -> "9 knots"
+    t = re.sub(r"\b(\d{2})\s+(\d{2})(?=\s*(?:utc|zulu)\b)", r"\1\2", t)   # "09 50 utc" -> "0950 utc"
+    # "three three zero" is sometimes written "3300": a heading has three digits.
+    t = re.sub(r"\b([0-3]\d0)0(?=\s+degrees)", lambda m: m.group(1) if int(m.group(1)) <= 360 else m.group(0), t)
     t = re.sub(r"(?<=\d)[-\s](?=\d\b)", "", t)          # "1-5" / "1 5" -> "15"
     # A spoken digit before a written number makes one heading: "tree 20 degrees" -> "320 degrees".
     t = re.sub(r"(?<![\d.])(\d)[.,]?\s+(\d{2})(?=\s+degrees)", r"\1\2", t)
