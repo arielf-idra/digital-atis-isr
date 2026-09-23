@@ -99,10 +99,10 @@ def test_november_tree_is_three_in_headings():
     texts = json.loads((Path(__file__).parent / "fixtures" / "llha_november.json").read_text(encoding="utf-8"))
     assert normalize("Wind touchdown zone. Tree 20 degrees. 11 knots.") == "wind touchdown zone 320 degrees 11 knots"
     winds = [parse(t, RUNWAYS).get("wind") for t in texts]
-    # The third loop wrote "3300 degrees": its variation is dropped, not truncated to 330.
-    assert winds == ["320/11kt V260-330", "320/11kt V260-330", "320/11kt"]
+    # The third loop wrote "3300 degrees" for three three zero; it is read as 330 too.
+    assert winds == ["320/11kt V260-330"] * 3
     fields = vote([parse(t, RUNWAYS) for t in texts])
-    assert fields["wind"]["value"] == "320/11kt V260-330" and fields["wind"]["status"] == "majority"
+    assert fields["wind"]["value"] == "320/11kt V260-330" and fields["wind"]["status"] == "confirmed"
     assert fields["letter"]["value"] == "N" and fields["time"]["value"] == "1050"
     assert fields["temperature"]["value"] == 30 and fields["dewpoint"]["value"] == 18
 
