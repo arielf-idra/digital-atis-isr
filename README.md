@@ -36,7 +36,17 @@ web page.
    | ⚠ heard once | only one loop read it; not confirmed |
    | ✕ unclear | the loops disagree; left blank instead of guessed |
 
-6. **Publish** `data/<ICAO>/latest.json`, `history.json` and `latest.mp3` to the
+6. **Letter check.** The letter is said at the start and end of every repetition.
+   Each mention is scored against all 26 code words ("information Alpha" …
+   "information Zulu") by how well each one fits the audio, and the scores are
+   added up across all mentions. This catches accent mishearings such as
+   "dual yet" for Juliet, and the letter is confirmed only when every mention agrees.
+7. **METAR cross-check.** Values are compared with the official METAR from
+   [aviationweather.gov](https://aviationweather.gov/data/api/), preferring the
+   report whose time matches the ATIS "valid from" time. **The ATIS always takes
+   priority**: the METAR never replaces an ATIS value. A disagreement is shown to
+   the user as a warning next to the value, e.g. "METAR says 30".
+8. **Publish** `data/<ICAO>/latest.json`, `history.json` and `latest.mp3` to the
    `gh-pages` branch. The audio clip lets anyone check the text by ear.
 
 If the stream is down, the last good ATIS stays on the page with an **offline** banner.
@@ -79,6 +89,9 @@ may be cached for up to 5 minutes.
 - `quality`: `good` (letter confirmed, no conflicts), `partial` or `poor`.
 - `fields.<name>.status`: `confirmed`, `majority`, `single` (heard once) or `conflict` (`value` is `null`).
 - Fields: `letter`, `time`, `runway`, `circuit`, `wind`, `visibility`, `clouds`, `temperature`, `dewpoint`, `qnh`.
+- `metar`: the cross-check: `raw`, `time`, `matched` (whether this is the METAR the ATIS was built from),
+  `checks.<field>` = `{"metar": value, "agree": true|false|null}`, and `differs` (list of fields).
+- `fields.letter.method` is `acoustic` with a `confidence` (0–1) when the letter was scored from the audio.
 - Treat data as stale when `checked_at` is more than about 20 minutes old.
 
 ## Running on GitHub

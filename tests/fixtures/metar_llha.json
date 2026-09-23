@@ -1,0 +1,14 @@
+[
+  {"icaoId": "LLHA", "obsTime": 1790149800, "reportTime": "2026-09-23T08:00:00.000Z", "temp": 30, "dewp": 17,
+   "wdir": 270, "wspd": 6, "visib": "6+", "altim": 1015,
+   "rawOb": "METAR LLHA 230750Z AUTO 27006KT 230V320 9999 FEW049 30/17 Q1015",
+   "clouds": [{"cover": "FEW", "base": 4900}]},
+  {"icaoId": "LLHA", "obsTime": 1790146200, "reportTime": "2026-09-23T07:00:00.000Z", "temp": 29, "dewp": 18,
+   "wdir": 270, "wspd": 5, "visib": "6+", "altim": 1015,
+   "rawOb": "METAR LLHA 230650Z AUTO 27005KT 200V340 9999 FEW037 29/18 Q1015",
+   "clouds": [{"cover": "FEW", "base": 3700}]},
+  {"icaoId": "LLHA", "obsTime": 1790142600, "reportTime": "2026-09-23T06:00:00.000Z", "temp": 28, "dewp": 19,
+   "wdir": "VRB", "wspd": 2, "visib": "6+", "altim": 1015,
+   "rawOb": "METAR LLHA 230550Z AUTO VRB02KT 9999 FEW034 28/19 Q1015",
+   "clouds": [{"cover": "FEW", "base": 3400}]}
+]

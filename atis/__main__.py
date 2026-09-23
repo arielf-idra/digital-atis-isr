@@ -12,7 +12,7 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import audio, consensus, parse, transcribe
+from . import audio, consensus, metar, parse, transcribe
 from .stations import STATIONS
 
 HISTORY_LIMIT = 96
@@ -52,22 +52,39 @@ def capture(station, seconds: int, workdir: Path) -> dict:
         # No clean loop boundaries (e.g. the recording changed format); use it all.
         loops = [(0.0, len(samples) / audio.SAMPLE_RATE)]
 
-    transcripts, parsed, clips = [], [], []
+    transcripts, parsed, clips, letter_scores = [], [], [], []
     for start, end in loops:
         clip = samples[int(start * audio.SAMPLE_RATE):int(end * audio.SAMPLE_RATE)]
-        text, prob = transcribe.transcribe(clip, station)
+        text, prob, words = transcribe.transcribe(clip, station)
         transcripts.append((text, prob))
         parsed.append(parse.parse(text, station.runways))
         clips.append(clip)
+        try:
+            spans = transcribe.letter_spans(words, len(clip) / audio.SAMPLE_RATE)
+            letter_scores += transcribe.score_letters(clip, spans)
+        except Exception as exc:  # fall back to the letter as written in the transcript
+            print(f"letter scoring skipped: {exc!r}")
 
     fields = consensus.vote(parsed)
+    acoustic = consensus.letter_from_scores(letter_scores, fields.get("letter"))
+    if acoustic:
+        fields["letter"] = acoustic
     best = consensus.best_transcript(transcripts, parsed, fields)
     audio.save(clips[best], workdir / "best.wav")
 
     letter = fields.get("letter", {})
     confirmed = sum(1 for v in fields.values() if v["status"] in ("confirmed", "majority"))
     conflicts = [k for k, v in fields.items() if v["status"] == "conflict"]
-    if letter.get("status") in ("confirmed", "majority") and len(loops) >= 2 and not conflicts:
+    try:
+        metar_check = metar.verify(fields, metar.fetch(station.icao))
+    except Exception as exc:  # METAR is a cross-check only; never block the ATIS on it
+        print(f"METAR check skipped: {exc!r}")
+        metar_check = None
+    # A disagreement with the very METAR the ATIS quotes points at a transcription error.
+    metar_differs = bool(metar_check and metar_check["matched"] and metar_check["differs"])
+
+    if (letter.get("status") in ("confirmed", "majority") and len(loops) >= 2
+            and not conflicts and not metar_differs):
         quality = "good"
     elif letter.get("value"):
         quality = "partial"
@@ -83,6 +100,7 @@ def capture(station, seconds: int, workdir: Path) -> dict:
         "quality": quality,
         "confirmed_fields": confirmed,
         "conflicts": conflicts,
+        "metar": metar_check,
         "transcripts": [{"text": t, "confidence": round(p, 3)} for t, p in transcripts],
         "model": transcribe.DEFAULT_MODEL,
     }

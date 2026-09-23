@@ -4,6 +4,7 @@ Every extractor is deliberately strict: a field is either matched with a
 plausible value or left as None. A missing field is better than a wrong one.
 """
 
+import difflib
 import re
 
 PHONETIC = {
@@ -43,18 +44,47 @@ def normalize(text: str) -> str:
     return t
 
 
-def _letter(word: str | None) -> str | None:
-    return PHONETIC.get(word) if word else None
+def _letter(words: tuple[str, ...]) -> str | None:
+    """Phonetic word(s) after "information" -> letter.
+
+    The speech model sometimes splits or bends a code word ("dual yet" for
+    Juliet), so after an exact lookup we accept the closest code word by
+    spelling. A wrong guess is caught because the letter is said at the start
+    and end of every loop and all readings must agree.
+    """
+    words = tuple(w for w in words if w)
+    if not words:
+        return None
+    if words[0] in PHONETIC:
+        return PHONETIC[words[0]]
+    candidates = [words[0]] + (["".join(words[:2])] if len(words) > 1 else [])
+    best, best_score = None, 0.0
+    for c in candidates:
+        for word, letter in PHONETIC.items():
+            # Spelling alone confuses "joel" with "hotel"; consonants carry the sound.
+            score = (_similar(c, word) + _similar(_consonants(c), _consonants(word))) / 2
+            if score > best_score:
+                best, best_score = letter, score
+    return best if best_score >= 0.6 else None
+
+
+def _similar(a: str, b: str) -> float:
+    return difflib.SequenceMatcher(None, a, b).ratio()
+
+
+def _consonants(word: str) -> str:
+    return re.sub(r"[aeiouy]", "", word)
 
 
 def parse(text: str, runways: tuple[str, ...] = ()) -> dict:
     t = normalize(text)
     f: dict = {}
 
-    m = re.search(r"information (\w+)", t)
-    f["letter"] = _letter(m.group(1) if m else None)
-    m = re.search(r"(?:have|of|end of) information (\w+)|information (\w+)\W*$", t)
-    f["letter_end"] = _letter((m.group(1) or m.group(2)) if m else None)
+    mentions = re.findall(r"information (\w+)(?: (\w+))?", t)
+    if mentions:
+        f["letter"] = _letter(mentions[0])
+    if len(mentions) > 1:
+        f["letter_end"] = _letter(mentions[-1])
 
     m = re.search(r"\b(\d{4})\s*(?:utc|zulu|z)\b", t)
     if m and int(m.group(1)[:2]) < 24 and int(m.group(1)[2:]) < 60:

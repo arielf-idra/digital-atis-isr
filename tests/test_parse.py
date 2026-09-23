@@ -75,3 +75,21 @@ def test_golf_phrasing():
     assert p["wind"] == "290/6kt V270-320"
     assert p["temperature"] == 29 and p["dewpoint"] == 18
     assert p["clouds"] == "FEW 3700ft" and p["qnh"] == 1015
+
+
+def test_letter_from_scores_combines_start_and_end_mentions():
+    from atis.consensus import letter_from_scores
+    # Real scores from the Juliet broadcast (start and end of one loop), top candidates only.
+    base = {l: -15.0 for l in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+    start = {**base, "J": -9.07, "M": -10.76, "D": -11.03}
+    end = {**base, "J": -8.75, "H": -11.42, "D": -11.49}
+    text = {"value": None, "status": "conflict"}   # transcript said "dual yet" / "Joel yet"
+    f = letter_from_scores([start, end], text)
+    assert f["value"] == "J" and f["status"] == "confirmed" and f["votes"] == 2
+
+
+def test_letter_from_scores_disagreeing_mentions_is_conflict():
+    from atis.consensus import letter_from_scores
+    base = {l: -15.0 for l in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+    f = letter_from_scores([{**base, "J": -9.0, "D": -9.2}, {**base, "D": -9.0, "J": -9.3}], None)
+    assert f["status"] == "conflict" and f["value"] is None

@@ -45,6 +45,10 @@
   .field.single .v { color: var(--warn); }
   .field.conflict .v, .field.missing .v { color: var(--muted); }
   .field .s { font-size: 12px; color: var(--warn); }
+  .field .m { font-size: 12px; color: var(--muted); }
+  .field .m.agree { color: var(--ok); }
+  .field .m.differs { color: var(--bad); font-weight: 600; }
+  .metar { font: 14px/1.5 var(--mono); color: var(--muted); margin: 12px 0 0; word-break: break-word; }
   details { margin-top: 4px; }
   details summary { cursor: pointer; color: var(--accent); font-size: 15px; padding: 6px 0; }
   details p, details li { font-size: 14px; color: var(--muted); }
@@ -78,6 +82,7 @@
 
   <section class="card">
     <div class="fields" id="fields"></div>
+    <p class="metar" id="metar"></p>
   </section>
 
   <section class="card">
@@ -161,6 +166,9 @@ function render(d) {
   } else if (d.status === "unreadable" || d.quality === "poor") {
     banner.className = "banner bad";
     banner.textContent = "The latest broadcast could not be read clearly. Listen to the recording below.";
+  } else if (d.metar && d.metar.differs.length) {
+    banner.className = "banner warn";
+    banner.textContent = "Some values differ from the official weather report (METAR) — check with the recording.";
   } else if (d.quality === "partial") {
     banner.className = "banner warn";
     banner.textContent = "Some items were not clear — check with the recording.";
@@ -178,8 +186,18 @@ function render(d) {
     box.append(el("div", "v", status === "missing" ? "—" : String(f.value)));
     if (status === "single") box.append(el("div", "s", "heard once"));
     if (f && f.status === "conflict") box.append(el("div", "s", "unclear"));
+    const c = d.metar && d.metar.checks[key];
+    if (c) {
+      if (c.agree === true) box.append(el("div", "m agree", "✓ matches METAR"));
+      else if (c.agree === false) box.append(el("div", "m differs", `METAR says ${c.metar}`));
+      else box.append(el("div", "m", `METAR: ${c.metar}`));
+    }
     fields.append(box);
   }
+
+  $("metar").textContent = d.metar
+    ? `${d.metar.matched ? "Checked against the METAR this ATIS was built from" : "Compared with the latest METAR"}: ${d.metar.raw}`
+    : "";
 
   loadAudio(d.checked_at);
   $("raw").replaceChildren(...(d.transcripts || []).map((t, i) =>
