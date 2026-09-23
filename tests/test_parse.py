@@ -66,3 +66,12 @@ def test_vote_foxtrot_all_fields_confirmed():
         "temperature": 28, "dewpoint": 19, "qnh": 1015,
     }
     assert all(v["status"] == "confirmed" for v in fields.values())
+
+
+def test_golf_phrasing():
+    texts = json.loads((Path(__file__).parent / "fixtures" / "llha_golf.json").read_text(encoding="utf-8-sig"))
+    p = parse(texts[0] if isinstance(texts, list) else texts, RUNWAYS)
+    assert p["letter"] == "G" and p["letter_end"] == "G"
+    assert p["wind"] == "290/6kt V270-320"
+    assert p["temperature"] == 29 and p["dewpoint"] == 18
+    assert p["clouds"] == "FEW 3700ft" and p["qnh"] == 1015

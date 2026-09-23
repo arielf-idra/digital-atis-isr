@@ -8,7 +8,7 @@ import re
 
 PHONETIC = {
     "alpha": "A", "alfa": "A", "bravo": "B", "charlie": "C", "delta": "D",
-    "echo": "E", "foxtrot": "F", "golf": "G", "hotel": "H", "india": "I",
+    "echo": "E", "foxtrot": "F", "golf": "G", "gulf": "G", "hotel": "H", "india": "I",
     "juliet": "J", "juliett": "J", "kilo": "K", "lima": "L", "mike": "M",
     "november": "N", "oscar": "O", "papa": "P", "quebec": "Q", "romeo": "R",
     "sierra": "S", "tango": "T", "uniform": "U", "victor": "V", "whiskey": "W",
@@ -30,6 +30,7 @@ CLOUD_COVER = {
 def normalize(text: str) -> str:
     t = text.lower()
     t = t.replace("x-ray", "xray")
+    t = re.sub(r"(\d)er\b", r"\1", t)                    # "29er" (two niner) -> "29"
     # Spoken digits -> numerals, then join runs of single digits ("one five" -> "15").
     t = re.sub(r"\b(" + "|".join(DIGITS) + r")\b", lambda m: DIGITS[m.group(1)], t)
     t = re.sub(r"(?<=\d)[-\s](?=\d\b)", "", t)          # "1-5" / "1 5" -> "15"
@@ -74,9 +75,13 @@ def parse(text: str, runways: tuple[str, ...] = ()) -> dict:
             f["wind"] = "CALM"
         elif speed and (direction == "variable" or int(direction) <= 360):
             f["wind"] = ("VRB" if direction == "variable" else direction) + f"/{int(speed)}kt"
-        g = re.search(r"gust(?:s|ing)? (?:up to )?(\d{1,2})", t[m.start():])
+        rest = t[m.start():m.start() + 120]
+        g = re.search(r"gust(?:s|ing)? (?:up to )?(\d{1,2})", rest)
         if g and "wind" in f and f["wind"] != "CALM":
             f["wind"] += f" G{int(g.group(1))}kt"
+        v = re.search(r"var(?:ying|iable) between (\d{3})(?: degrees)? and (\d{3})", rest)
+        if v and "wind" in f and f["wind"] != "CALM":
+            f["wind"] += f" V{v.group(1)}-{v.group(2)}"
 
     if re.search(r"\bcav ?ok\b", t):
         f["visibility"] = "CAVOK"

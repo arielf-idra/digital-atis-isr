@@ -1,6 +1,6 @@
 """Capture one ATIS broadcast and write it as JSON.
 
-    python -m atis LLHA --out site/data
+    python -m atis LLHA --out data
 """
 
 import argparse
@@ -91,9 +91,9 @@ def capture(station, seconds: int, workdir: Path) -> dict:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("station", choices=sorted(STATIONS))
-    ap.add_argument("--out", type=Path, default=Path("site/data"))
-    ap.add_argument("--seconds", type=int, default=130,
-                    help="recording length; ~3 loops of the Haifa ATIS fit in 130 s")
+    ap.add_argument("--out", type=Path, default=Path("data"))
+    ap.add_argument("--seconds", type=int, default=210,
+                    help="recording length; must hold 2+ complete loops of the longest ATIS")
     args = ap.parse_args(argv)
 
     station = STATIONS[args.station]

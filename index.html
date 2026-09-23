@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital ATIS</title>
+<meta name="description" content="Live ATIS as text. Unofficial, not for operational use.">
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #ffffff; --ink: #14171c; --muted: #5d6573; --line: #e2e5ea;
+    --ok: #1a7f4b; --warn: #a15c00; --bad: #b3261e; --accent: #1f5fbf;
+    --warn-bg: #fff4e0; --bad-bg: #fdecea;
+    --mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1216; --card: #181c22; --ink: #e8ebf0; --muted: #9aa3b2; --line: #2a303a;
+      --ok: #4cc38a; --warn: #f0b04a; --bad: #ff7a70; --accent: #7aa7ff;
+      --warn-bg: #3a2c12; --bad-bg: #3d1a18;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 16px 16px 40px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+  h1 { font-size: 18px; margin: 0; color: var(--muted); font-weight: 600; }
+  select { font: inherit; font-size: 15px; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--line);
+           background: var(--card); color: var(--ink); }
+  .banner { border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-weight: 600; display: none; }
+  .banner.warn { display: block; background: var(--warn-bg); color: var(--warn); }
+  .banner.bad { display: block; background: var(--bad-bg); color: var(--bad); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin-bottom: 12px; }
+  .top { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; }
+  .letter { font: 700 56px/1 var(--mono); width: 84px; height: 84px; border-radius: 16px; display: grid;
+            place-items: center; background: var(--ink); color: var(--card); flex: none; }
+  .top h2 { margin: 0; font-size: 24px; }
+  .meta { color: var(--muted); font-size: 15px; }
+  .text { font-size: 19px; line-height: 1.6; margin: 0; }
+  audio { width: 100%; margin-top: 14px; }
+  .fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .field { border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
+  .field .k { font-size: 13px; color: var(--muted); }
+  .field .v { font: 600 20px/1.3 var(--mono); }
+  .field.single .v { color: var(--warn); }
+  .field.conflict .v, .field.missing .v { color: var(--muted); }
+  .field .s { font-size: 12px; color: var(--warn); }
+  details { margin-top: 4px; }
+  details summary { cursor: pointer; color: var(--accent); font-size: 15px; padding: 6px 0; }
+  details p, details li { font-size: 14px; color: var(--muted); }
+  .history { list-style: none; padding: 0; margin: 0; }
+  .history li { padding: 8px 0; border-top: 1px solid var(--line); }
+  .history b { font-family: var(--mono); color: var(--ink); }
+  footer { font-size: 13px; color: var(--muted); text-align: center; margin-top: 20px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Digital ATIS</h1>
+    <select id="stationSelect" aria-label="Airport"></select>
+  </header>
+
+  <div id="banner" class="banner"></div>
+
+  <section class="card">
+    <div class="top">
+      <div class="letter" id="letter">–</div>
+      <div>
+        <h2 id="headline">Loading…</h2>
+        <div class="meta" id="meta"></div>
+      </div>
+    </div>
+    <p class="text" id="text"></p>
+    <audio id="audio" controls preload="none"></audio>
+  </section>
+
+  <section class="card">
+    <div class="fields" id="fields"></div>
+  </section>
+
+  <section class="card">
+    <details>
+      <summary>Earlier broadcasts</summary>
+      <ul class="history" id="history"></ul>
+    </details>
+    <details>
+      <summary>How this is made</summary>
+      <p>The ATIS radio broadcast is recorded and turned into text by a computer every few minutes.
+        The broadcast repeats, so it is transcribed several times and a value is shown only when the
+        repetitions agree. Items heard only once are shown in orange; items that could not be heard
+        clearly are left blank.</p>
+      <div id="raw"></div>
+    </details>
+  </section>
+
+  <footer>
+    Unofficial. <strong>Not for operational use</strong> — always listen to the official ATIS.<br>
+    <a href="https://github.com/arielf-idra/digital-atis-isr">About &amp; data for developers</a>
+  </footer>
+</main>
+
+<script>
+const STATIONS = { LLHA: "Haifa" };
+const REPO_DATA = "https://raw.githubusercontent.com/arielf-idra/digital-atis-isr/gh-pages/data";
+// When the page is served next to the data (gh-pages or locally) use it; otherwise read from the repo.
+const DATA_BASES = ["data", REPO_DATA];
+const LABELS = {
+  runway: "Runway", wind: "Wind", visibility: "Visibility", clouds: "Clouds",
+  temperature: "Temperature °C", dewpoint: "Dew point °C", qnh: "QNH hPa", circuit: "Circuit",
+};
+const STALE_MIN = 20;
+
+const $ = id => document.getElementById(id);
+const icao = (new URLSearchParams(location.search).get("station") || "LLHA").toUpperCase();
+let dataBase = null;
+
+for (const [code, name] of Object.entries(STATIONS)) {
+  $("stationSelect").add(new Option(`${name} (${code})`, code, code === icao, code === icao));
+}
+$("stationSelect").onchange = e => { location.search = `?station=${e.target.value}`; };
+
+function ago(iso) {
+  const min = Math.round((Date.now() - Date.parse(iso)) / 60000);
+  if (min < 1) return "just now";
+  if (min < 60) return `${min} min ago`;
+  return `${Math.floor(min / 60)} h ${min % 60} min ago`;
+}
+function localTime(iso) {
+  return new Date(iso).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
+function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+async function fetchData(file) {
+  const bases = dataBase ? [dataBase] : DATA_BASES;
+  for (const base of bases) {
+    try {
+      const r = await fetch(`${base}/${icao}/${file}?t=${Date.now()}`, { cache: "no-store" });
+      if (r.ok) { dataBase = base; return r; }
+    } catch (e) { /* try next */ }
+  }
+  throw new Error(`no ${file}`);
+}
+
+function render(d) {
+  document.title = d.letter ? `${d.station.name} ATIS ${d.letter}` : "Digital ATIS";
+  $("letter").textContent = d.letter || "?";
+  $("headline").textContent = `${d.station.name} information ${d.letter || "?"}`;
+  $("meta").textContent = `Updated ${ago(d.checked_at)} · ATIS ${d.station.frequency}`;
+
+  const banner = $("banner");
+  const ageMin = (Date.now() - Date.parse(d.checked_at)) / 60000;
+  banner.className = "banner";
+  if (d.status === "offline") {
+    banner.className = "banner bad";
+    banner.textContent = `No broadcast received since ${localTime(d.checked_at)}. Showing the last one heard.`;
+  } else if (ageMin > STALE_MIN) {
+    banner.className = "banner bad";
+    banner.textContent = `Not updated for ${ago(d.checked_at).replace(" ago", "")} — may be out of date.`;
+  } else if (d.status === "unreadable" || d.quality === "poor") {
+    banner.className = "banner bad";
+    banner.textContent = "The latest broadcast could not be read clearly. Listen to the recording below.";
+  } else if (d.quality === "partial") {
+    banner.className = "banner warn";
+    banner.textContent = "Some items were not clear — check with the recording.";
+  }
+
+  $("text").textContent = d.text || "";
+
+  const fields = $("fields");
+  fields.replaceChildren();
+  for (const [key, label] of Object.entries(LABELS)) {
+    const f = (d.fields || {})[key];
+    const status = f && f.value != null ? f.status : "missing";
+    const box = el("div", `field ${status}`);
+    box.append(el("div", "k", label));
+    box.append(el("div", "v", status === "missing" ? "—" : String(f.value)));
+    if (status === "single") box.append(el("div", "s", "heard once"));
+    if (f && f.status === "conflict") box.append(el("div", "s", "unclear"));
+    fields.append(box);
+  }
+
+  loadAudio(d.checked_at);
+  $("raw").replaceChildren(...(d.transcripts || []).map((t, i) =>
+    el("p", null, `Repetition ${i + 1}: ${t.text}`)));
+}
+
+let audioStamp = null;
+async function loadAudio(stamp) {
+  if (stamp === audioStamp) return;
+  audioStamp = stamp;
+  try {
+    // Fetched as a blob because raw.githubusercontent.com doesn't label MP3s as audio.
+    const blob = await (await fetchData("latest.mp3")).blob();
+    const old = $("audio").src;
+    $("audio").src = URL.createObjectURL(new Blob([blob], { type: "audio/mpeg" }));
+    if (old.startsWith("blob:")) URL.revokeObjectURL(old);
+  } catch (e) { $("audio").hidden = true; }
+}
+
+function renderHistory(items) {
+  $("history").replaceChildren(...items.slice(0, 12).map(h => {
+    const li = el("li");
+    li.append(el("b", null, `${h.letter} `));
+    li.append(document.createTextNode(`${new Date(h.first_seen).toLocaleString([], { dateStyle: "short", timeStyle: "short" })} — ${h.text}`));
+    return li;
+  }));
+}
+
+async function load() {
+  try {
+    render(await (await fetchData("latest.json")).json());
+  } catch (e) {
+    $("banner").className = "banner bad";
+    $("banner").textContent = "No ATIS available yet. Please try again in a few minutes.";
+    $("headline").textContent = STATIONS[icao] || icao;
+  }
+  try { renderHistory(await (await fetchData("history.json")).json()); } catch (e) { /* optional */ }
+}
+
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>

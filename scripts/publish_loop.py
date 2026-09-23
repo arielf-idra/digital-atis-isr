@@ -43,14 +43,11 @@ def main() -> int:
     ap.add_argument("--pages", type=Path, required=True)
     ap.add_argument("--stations", nargs="+", default=["LLHA"])
     ap.add_argument("--minutes", type=float, default=50)
-    ap.add_argument("--interval", type=int, default=240, help="seconds between capture starts")
+    ap.add_argument("--interval", type=int, default=300, help="seconds between capture starts")
     ap.add_argument("--heartbeat", type=int, default=600, help="max seconds between pushes")
     args = ap.parse_args()
 
-    site = Path(__file__).resolve().parent.parent / "site"
-    for f in site.iterdir():
-        if f.is_file():
-            shutil.copy2(f, args.pages / f.name)
+    shutil.copy2(Path(__file__).resolve().parent.parent / "index.html", args.pages / "index.html")
     (args.pages / ".nojekyll").touch()
 
     deadline = time.monotonic() + args.minutes * 60
