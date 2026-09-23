@@ -1,0 +1,95 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-25T17:02:47Z",
+  "letter": "G",
+  "fields": {
+    "letter": {
+      "value": "G",
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        "G"
+      ],
+      "method": "acoustic",
+      "confidence": 0.998
+    },
+    "qnh": {
+      "value": 1014,
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        1014
+      ]
+    }
+  },
+  "text": "8QNH 1014 millibars. For clearance and startup contact Haifa clearance 121 decimal 8-0. End of information Golf. Haifa airport infra. Audits not available. Audits not available. But it's not available. But it's not available. But it's not available. But it's not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available, Audits not available, Audits not available, Audits not available, Audits not available. Audits not available.",
+  "loops": 1,
+  "complete_loops": false,
+  "quality": "partial",
+  "confirmed_fields": 0,
+  "conflicts": [],
+  "metar": {
+    "raw": "METAR LLHA 251550Z AUTO 33011KT CAVOK 27/17 Q1014",
+    "time": "2026-09-25T15:50Z",
+    "matched": false,
+    "checks": {
+      "qnh": {
+        "metar": 1014,
+        "agree": true
+      },
+      "temperature": {
+        "metar": 27,
+        "agree": null
+      },
+      "dewpoint": {
+        "metar": 17,
+        "agree": null
+      },
+      "wind": {
+        "metar": "330/11kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "NSC",
+        "agree": null
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": null
+      }
+    },
+    "differs": []
+  },
+  "transcripts": [
+    {
+      "text": "8QNH 1014 millibars. For clearance and startup contact Haifa clearance 121 decimal 8-0. End of information Golf. Haifa airport infra. Audits not available. Audits not available. But it's not available. But it's not available. But it's not available. But it's not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available, Audits not available, Audits not available, Audits not available, Audits not available. Audits not available.",
+      "confidence": 0.855
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-25T17:02:47Z",
+  "timing": {
+    "heard_at": "2026-09-25T17:02:47Z",
+    "first_heard_at": "2026-09-25T17:02:47Z",
+    "atis_issued_at": null,
+    "atis_age_min_when_heard": null,
+    "published_at": "2026-09-25T17:03:12Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-25T17:17:47Z"
+  },
+  "missing_required": [
+    "runway",
+    "wind",
+    "temperature"
+  ]
+}
