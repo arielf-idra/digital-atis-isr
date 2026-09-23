@@ -35,6 +35,8 @@ def normalize(text: str) -> str:
     # Spoken digits -> numerals, then join runs of single digits ("one five" -> "15").
     t = re.sub(r"\b(" + "|".join(DIGITS) + r")\b", lambda m: DIGITS[m.group(1)], t)
     t = re.sub(r"(?<=\d)[-\s](?=\d\b)", "", t)          # "1-5" / "1 5" -> "15"
+    # A spoken digit before a written number makes one heading: "tree 20 degrees" -> "320 degrees".
+    t = re.sub(r"(?<![\d.])(\d)[.,]?\s+(\d{2})(?=\s+degrees)", r"\1\2", t)
     t = re.sub(r"(?<=\d),(?=\d{3}\b)", "", t)            # "3,400" -> "3400"
     t = re.sub(r"(?<=\d) decimal (?=\d)", ".", t)
     t = re.sub(r"(?<!\d)\.|\.(?!\d)", " ", t)            # periods only survive inside numbers
@@ -98,7 +100,7 @@ def parse(text: str, runways: tuple[str, ...] = ()) -> dict:
     if m:
         f["circuit"] = m.group(1)
 
-    m = re.search(r"wind\b(?: touchdown zone)?\s+(variable|calm|\d{3})(?: degrees)?\s*(?:(\d{1,2}) knots?)?", t)
+    m = re.search(r"wind\b(?: touchdown zone)?\s+(variable|calm|\d{3}\b)(?: degrees)?\s*(?:(\d{1,2}) knots?)?", t)
     if m:
         direction, speed = m.group(1), m.group(2)
         if direction == "calm":
@@ -109,7 +111,7 @@ def parse(text: str, runways: tuple[str, ...] = ()) -> dict:
         g = re.search(r"gust(?:s|ing)? (?:up to )?(\d{1,2})", rest)
         if g and "wind" in f and f["wind"] != "CALM":
             f["wind"] += f" G{int(g.group(1))}kt"
-        v = re.search(r"var(?:ying|iable) between (\d{3})(?: degrees)? and (\d{3})", rest)
+        v = re.search(r"var(?:ying|iable) between (\d{3})\b(?: degrees)? and (\d{3})\b", rest)
         if v and "wind" in f and f["wind"] != "CALM":
             f["wind"] += f" V{v.group(1)}-{v.group(2)}"
 

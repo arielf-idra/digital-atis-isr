@@ -93,3 +93,21 @@ def test_letter_from_scores_disagreeing_mentions_is_conflict():
     base = {l: -15.0 for l in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
     f = letter_from_scores([{**base, "J": -9.0, "D": -9.2}, {**base, "D": -9.0, "J": -9.3}], None)
     assert f["status"] == "conflict" and f["value"] is None
+
+
+def test_november_tree_is_three_in_headings():
+    texts = json.loads((Path(__file__).parent / "fixtures" / "llha_november.json").read_text(encoding="utf-8"))
+    assert normalize("Wind touchdown zone. Tree 20 degrees. 11 knots.") == "wind touchdown zone 320 degrees 11 knots"
+    winds = [parse(t, RUNWAYS).get("wind") for t in texts]
+    # The third loop wrote "3300 degrees": its variation is dropped, not truncated to 330.
+    assert winds == ["320/11kt V260-330", "320/11kt V260-330", "320/11kt"]
+    fields = vote([parse(t, RUNWAYS) for t in texts])
+    assert fields["wind"]["value"] == "320/11kt V260-330" and fields["wind"]["status"] == "majority"
+    assert fields["letter"]["value"] == "N" and fields["time"]["value"] == "1050"
+    assert fields["temperature"]["value"] == 30 and fields["dewpoint"]["value"] == 18
+
+
+def test_tree_as_three_elsewhere():
+    assert parse("temperature tree zero dew point one eight")["temperature"] == 30
+    assert parse("wind 250 degrees tree knots")["wind"] == "250/3kt"
+    assert parse("QNH one zero one tree")["qnh"] == 1013
