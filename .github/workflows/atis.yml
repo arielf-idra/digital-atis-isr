@@ -78,7 +78,7 @@ jobs:
       - name: Capture and publish (~50 min)
         env:
           GITHUB_TOKEN: ${{ github.token }}   # to open an issue for broadcasts that fail to decode
-        run: python scripts/publish_loop.py --pages pages --minutes 50
+        run: python scripts/publish_loop.py --pages pages --minutes 50 --stations LLHA LLBG LLER
 
       - name: Start the next run
         # workflow_dispatch is one of the few events a workflow may trigger with its own token.

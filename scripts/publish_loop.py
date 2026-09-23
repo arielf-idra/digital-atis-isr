@@ -43,7 +43,7 @@ def utc_iso() -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pages", type=Path, required=True)
-    ap.add_argument("--stations", nargs="+", default=["LLHA"])
+    ap.add_argument("--stations", nargs="+", default=sorted(STATIONS))
     ap.add_argument("--minutes", type=float, default=50)
     ap.add_argument("--seconds", type=int, default=180, help="length of each recording")
     args = ap.parse_args()
@@ -51,6 +51,8 @@ def main() -> int:
     shutil.copy2(Path(__file__).resolve().parent.parent / "index.html", args.pages / "index.html")
     (args.pages / ".nojekyll").touch()
 
+    audio_stations = [s for s in args.stations if STATIONS[s].source == "audio"]
+    text_stations = [s for s in args.stations if STATIONS[s].source == "text"]
     tmp = Path(tempfile.mkdtemp())
     deadline = time.monotonic() + args.minutes * 60
     counter = 0
@@ -59,13 +61,16 @@ def main() -> int:
         nonlocal counter
         counter += 1
         pending = {}
-        for s in args.stations:
+        for s in audio_stations:
             path = tmp / f"{s}-{counter}.wav"
             pending[s] = (audio.start_recording(STATIONS[s].stream_url, args.seconds, path), path)
         return pending
 
     pending = start_all()
-    while pending:
+    # Text stations have nothing to record: fetch them once per cycle.
+    while pending or (text_stations and time.monotonic() < deadline):
+        if not pending:
+            time.sleep(args.seconds)
         ready = {}
         for s, (proc, path) in pending.items():
             try:
@@ -73,12 +78,12 @@ def main() -> int:
             except audio.CaptureError as exc:
                 ready[s] = (None, utc_iso(), str(exc))
 
-        all_failed = all(err for _, _, err in ready.values())
+        all_failed = bool(ready) and all(err for _, _, err in ready.values())
         if all_failed:
             time.sleep(RETRY_PAUSE_SEC)  # stream down: retry calmly instead of spinning
         # Start the next recordings before processing, so listening never pauses.
         more = time.monotonic() + args.seconds < deadline
-        pending = start_all() if more else {}
+        pending = start_all() if more and audio_stations else {}
 
         for s, (wav, heard_at, err) in ready.items():
             argv = [s, "--out", str(args.pages / "data")]
@@ -89,6 +94,11 @@ def main() -> int:
                 print(f"{s}: unexpected error {exc!r}", flush=True)
             if wav:
                 wav.unlink(missing_ok=True)
+        for s in text_stations:
+            try:
+                capture([s, "--out", str(args.pages / "data")])
+            except Exception as exc:
+                print(f"{s}: unexpected error {exc!r}", flush=True)
         try:
             publish(args.pages)
             print(f"published {utc_iso()}", flush=True)

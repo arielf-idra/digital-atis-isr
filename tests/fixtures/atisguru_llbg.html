@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-N7WYXBE6DV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N7WYXBE6DV');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <base href="/">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="DigitalAtisCollector.Web.styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!--Blazor:{"type":"server","prerenderId":"9234d642c9cb4861a686f05cf0bbebfd","key":{"locationHash":"5ACC588A828552DE06ADC1412E29BEBD6046569940475C11BDB1D51145298823:6","formattedComponentKey":""},"sequence":0,"descriptor":"CfDJ8Er1XUaz4mhNu2TA6JlCFzhogemUX11xBQiEDnbdDVwG5K7I9zbf/7XtzuwMyaTYWokdAV\u002BWz6D/fHpye/jqGsLICmKPvggia1TNyCxe0/vpmQj4Ff4uKfcSJV2YL0p60oiTMDw4D1OpWHfbsSyy5sdX7Jp6xpG12PZz5uLa7lUXy4pTINGz3mv1cXxaDqJZ5/sgze\u002BwolOTWTLqfbFy\u002Bs1OMGU9yM04w\u002BGQk2Z7LUKi1SR\u002BkeusHjurDcC0uSewcsmE9r4AwYt5AwqLc/Tz5q8NXGvUyTp69TeLphG/P\u002BeWzUaSwNePWdQwX10nlB1DgWPG8BJKoX03PoKmFakwMyr\u002BJQRquG8oYrIdAC2AtjrUWznsejviLLNicvg73rev2EgdaJN\u002BAFDmyBs7uUFoBbaF09E12c7cd5ZBGyNBTRNrj/bOmxQM15INUelcySfj9NyNQDgRqydDfcuJu8PhTf4ln4OlYQv\u002BejxiA\u002B9Ymy7C4MZrr2Gh8FBk6Kgv3rA4b5o4UGgK3gNzJ69wkiwg9fqreOymxm9vwayd3eI8oaF64/Ry\u002B6lP4Ww8WP2yKN487FQFA5Uqq3RwnyxINfjiesZKSgzUqfX2KcUFEaUc3V\u002BKRQ3puGGSj8LO1gYzLnSpuDDWHSi8vbz9HM5\u002BOEAhc6M="}--><link rel="stylesheet" href="_content/Radzen.Blazor/css/material-base.css?v=7.0.7.0" /><!--Blazor:{"prerenderId":"9234d642c9cb4861a686f05cf0bbebfd"}-->
+    <!--bl:31--><title>LLBG - Live digital ATIS</title><!--/bl:31--></head>
+
+<body onload="startTime()"><div class="page" b-wj8zppn37y><div class="sidebar" b-wj8zppn37y><div class="top-row ps-3 navbar navbar-dark" b-k4l5ieqz0c><div class="container-fluid" b-k4l5ieqz0c><a class="navbar-brand" href b-k4l5ieqz0c>ATIS.guru</a></div></div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" b-k4l5ieqz0c>
+
+<div class="nav-scrollable" onclick="document.querySelector(&#x27;.navbar-toggler&#x27;).click()" b-k4l5ieqz0c><nav class="nav flex-column" b-k4l5ieqz0c><div class="nav-item px-3" b-k4l5ieqz0c><a href="" class="nav-link"><span class="bi bi-house-door-fill" aria-hidden="true" b-k4l5ieqz0c></span> Home
+            </a></div>
+
+        <div class="nav-item px-3" b-k4l5ieqz0c><a href="atis/EKCH" class="nav-link"><span class="bi bi-star-fill" aria-hidden="true" b-k4l5ieqz0c></span> EKCH
+            </a></div>
+
+        <div class="nav-item px-3" b-k4l5ieqz0c><a href="atis/ESSA" class="nav-link"><span class="bi bi-star-fill" aria-hidden="true" b-k4l5ieqz0c></span> ESSA
+            </a></div>
+
+        <div class="nav-item px-3" b-k4l5ieqz0c><a href="atis/ENGM" class="nav-link"><span class="bi bi-star-fill" aria-hidden="true" b-k4l5ieqz0c></span> ENGM
+            </a></div><div class="nav-item px-3" b-k4l5ieqz0c><a href="atis/EDDS" class="nav-link"><span class="bi bi-shuffle" aria-hidden="true" b-k4l5ieqz0c></span> Random
+                </a></div><div class="nav-item px-3" b-k4l5ieqz0c><a href="stats" class="nav-link"><span class="bi bi-file-earmark-bar-graph-fill" aria-hidden="true" b-k4l5ieqz0c></span> Stats
+            </a></div>
+
+        <div class="nav-item px-3" b-k4l5ieqz0c><a href="https://www.paypal.com/donate/?business=VJYWFH5RAXYBG&amp;no_recurring=0&amp;item_name=Help&#x2B;cover&#x2B;server&#x2B;costs&amp;currency_code=EUR" class="nav-link"><span class="bi bi-cash-coin" aria-hidden="true" b-k4l5ieqz0c></span> Donate
+            </a></div></nav></div></div>
+
+    <main b-wj8zppn37y><div class="top-row px-4" id="clock" b-wj8zppn37y>
+            00:00:00 UTC
+        </div>
+
+        <article class="content px-4" b-wj8zppn37y><!--bl:15--><!--bl:23--><!--bl:25--><!--/bl:25--><!--/bl:23-->
+
+<h1>
+    D-ATIS for LLBG</h1>
+<h6>
+    Live digital ATIS for LLBG</h6><p><em>No ATIS available...</em></p><!--/bl:15--></article></main></div>
+
+<div id="blazor-error-ui" b-wj8zppn37y>
+    An unhandled error has occurred.
+    <a href class="reload" b-wj8zppn37y>Reload</a>
+    <a class="dismiss" b-wj8zppn37y>🗙</a></div>
+
+<script b-wj8zppn37y>
+    function startTime() {
+      const today = new Date();
+      let h = today.getUTCHours();
+      let m = today.getUTCMinutes();
+      let s = today.getUTCSeconds();
+      h = checkTime(h);
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s + " UTC";
+      setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1487814270557299" crossorigin="anonymous" b-wj8zppn37y></script>
+
+<!--Blazor:{"type":"server","prerenderId":"6af01636d31c497aa7ff29a115d0f452","key":{"locationHash":"49228C4321D82C59B5A8CDDC1C7B2CBD9CA2318E9668AC2D83FB1550FE61B90A:18","formattedComponentKey":""},"sequence":1,"descriptor":"CfDJ8Er1XUaz4mhNu2TA6JlCFzgmPqnpPPSW7uQh7biOTp/l17gZrqaQsWfGI1TIYkDrQYTiD27cB/4/vJW8Z/GRYWwkzZyWwfja1SMFvfPs8c8oDP36CaPN/4xvrVKAA1N1hYJnoUOd6MyjMtHxCqx0wmv9vhkABT3S8asKg3p7/qdiYWUbVITX01ji4cDhvTA2Ox137FnSX70anX5/\u002BG7tna75G35hr\u002BSUKHXq56vVBpoUbGQYbzpZ11pbEljTigTWYPtGe/58BeJl8lOOQoaRarNt\u002BcJSLVAH3EJr\u002BQ\u002BEfs6N8r7R6OLU6FzL4HGSpWWf6774QU02F6aIpl/Rk8ge4lbmws9RbBZ2\u002B4fKXiOxo\u002BJu67t5QG0h4SZtbvyp3G1CZ/FOMb94gfL2iPl1qUu\u002Bf5zsxJ8JMjk\u002BtvzWdlp7fUuQAVUhkR9Q78TtkKMHGeLMpWbmo2ywiQfxeDeeyDluEm1tf\u002BIMzi5miD7MCKwcNMN174mjZt4Pd2\u002B8VvUG9lZDHo4ekJP/C\u002BF3IxfpfVgW9zg="}-->
+<div aria-live="polite" class="rz-notification"></div>
+
+
+<!--Blazor:{"prerenderId":"6af01636d31c497aa7ff29a115d0f452"}-->
+        
+    <script src="_framework/blazor.web.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js?v=7.0.7.0"></script>
+    
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a046b8898d7b49148e2b4f2085b224df"}'></script></body></html><blazor-ssr><template blazor-component-id="31"><title>LLBG (TLV) - Live digital ATIS</title></template><template blazor-component-id="15"><!--bl:23--><!--bl:25--><!--/bl:25--><!--/bl:23-->
+
+<h1>
+    D-ATIS for LLBG (TLV)</h1>
+<h6>
+    Live digital ATIS for Ben Gurion Airport<!--bl:33--><svg xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewBox="0 0 640 480" style="padding-left: 2px; padding-bottom: 2px;" transform="rotate(0)" b-wxp0nwfzod><defs><clipPath id='il-a'><path fill-opacity='.7' d='M-87.6 0H595v512H-87.6z' /></clipPath></defs><g fill-rule='evenodd' clip-path='url(#il-a)' transform='translate(82.1) scale(.94)'><path fill='#fff' d='M619.4 512H-112V0h731.4z' /><path fill='#00c' d='M619.4 115.2H-112V48h731.4zm0 350.5H-112v-67.2h731.4zm-483-275 110.1 191.6L359 191.6l-222.6-.8z' /><path fill='#fff' d='m225.8 317.8 20.9 35.5 21.4-35.3-42.4-.2z' /><path fill='#00c' d='M136 320.6 246.2 129l112.4 190.8-222.6.8z' /><path fill='#fff' d='m225.8 191.6 20.9-35.5 21.4 35.4-42.4.1zM182 271.1l-21.7 36 41-.1-19.3-36zm-21.3-66.5 41.2.3-19.8 36.3-21.4-36.6zm151.2 67 20.9 35.5-41.7-.5 20.8-35zm20.5-67-41.2.3 19.8 36.3 21.4-36.6zm-114.3 0L189.7 256l28.8 50.3 52.8 1.2 32-51.5-29.6-52-55.6.5z' /></g></svg><!--/bl:33--></h6><div class="container-fluid" style="padding: 0px;"><div class="row mt-3"><div class="col-sm"><div class="card"><div class="card-body"><h5 class="card-title" data-toggle="tooltip">
+                                Arrival ATIS
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-muted" data-placement="top" title="Requested by LY356 (4X-EHH)">2026-09-23 17:06 UTC</h6>
+                            <div class="atis">LLBG ARR ATIS I&#xA;2331Z LLBG ARR INFO I.&#xD;&#xA;TIME 2320.&#xD;&#xA;EXP ILS APCH ARR RWY 21.&#xD;&#xA;DEP RWY 26.&#xD;&#xA;WIND 160 DEG, 4 KT.&#xD;&#xA;VIS 10 KM OR MORE.&#xD;&#xA;CLD FEW 3000 FT.&#xD;&#xA;T 25. DP 20. QNH 1012.&#xD;&#xA;NOSIG.</div></div></div></div>
+            <div class="col-sm"><div class="card"><div class="card-body"><h5 class="card-title">
+                                Departure ATIS
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-muted" data-placement="top" title="Requested by 9HBBH">2026-09-21 01:07 UTC</h6>
+                            <div class="atis">LLBG DEP ATIS X&#xA;1951Z LLBG DEP INFO X.&#xA;&#x9;TIME 1950.&#xA;&#x9;DEP RWY 26.&#xA;&#x9;ARR RWY 30.&#xA;&#x9;WIND VRB, 2 KT.&#xA;&#x9;VIS 10 KM OR MORE.&#xA;&#x9;CLD FEW 2700 FT.&#xA;&#x9;T 27. DP 21. QNH 1012.&#xA;&#x9;NOSIG.&#xA;&#x9;DEPARTURES VIA TOMAL AND&#xA;&#x9;SALAM EXP SID RIPUD. TFC&#xA;&#x9;VIA SALAM EXP RADAR&#xA;&#x9;VECTORS AFTER RIPUD.&#xA;&#x9;CLEARANCE DELIVERY IS&#xA;&#x9;OPERATING ON 121 DECIMAL&#xA;&#x9;750.&#xA;&#x9;GNSS INTERFERENCES&#xA;&#x9;OCCURRENCES HAVE BEEN&#xA;&#x9;REPORTED WITHIN TEL AVIV&#xA;&#x9;FIR.</div></div></div></div></div><div class="row mt-3"><div class="col-12"><div class="card"><div class="card-body"><h5 class="card-title">METAR</h5>
+                            <div class="atis">METAR LLBG 231650Z 34006KT 9999 FEW035 27/18 Q1015 NOSIG</div></div></div></div></div><div class="row mt-3"><div class="col-12"><div class="card"><div class="card-body"><h5 class="card-title">TAF</h5>
+                            <div class="atis">TAF LLBG 231703Z 2318/2418 33006KT 9999 SCT030 TX30/2411Z TN22/2403Z &#xA;  BECMG 2319/2321 VRB03KT &#xA;  PROB40 &#xA;  TEMPO 2321/2405 BKN025 &#xA;  BECMG 2407/2409 31010KT FEW035 &#xA;  BECMG 2415/2417 VRB03KT SCT030</div></div></div></div></div></div>
+    <p></p></template><blazor-ssr-end></blazor-ssr-end></blazor-ssr><!--Blazor-Server-Component-State:CfDJ8Er1XUaz4mhNu2TA6JlCFzh+bkt3/ovRq2dbkh7K8Z5P6+OUzxSg2kUySBT0ecxSMgXImkuxuyRYt2vH04NQAAoI2/nF3OfKX4sDR3faQQNiTgwt0fbK1ep1hyg1A36aq+7NN3fFKyHnRVuMl6BmbUMi/4fktNYDYqBUReoHa3cTIxFbsoBH4sojQKePKzKu/Gw9+S1fMkTsoZQFGeNOpCRLDWfJ9BOpcUruZFqGoPifBtOzM2QpQQaX0fOhz7KfYgwfMrjngAZED1gm3881tTq81ATwwcC8f+g3RAeJteXyRZvP2I+tt/fdzwQvUzN7cQUWIOPFQNS/3hizxTrEy7pWD8ELhdq0j+gVcXdDJ9k7S0HWHHk8SQ0pE1DpMnOkKTQr8j7opVoy8iACKBbx7fa5+28loErWnAh752/nu17fKP48zclCjIArGDH6i2WbpAEdz1jjyYROiIA3Bd30gkvfvS3/FOharVnTqATtZsKHBB8Q47KjLogPIhp8LSXSDhJqlyVYl7sFF/Q3Lgp2WkR+3d7DwtUsjedicfV7rDix3TeLftKft2E1HOWuBIaerIU672dUPyJknzaXz7lDDVA=-->

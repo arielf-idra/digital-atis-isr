@@ -49,7 +49,8 @@ def record(out: Path, record: dict, missing: list[str]) -> str | None:
         return None
 
     name = t["heard_at"].replace("-", "").replace(":", "")[:13] + "Z-" + (letter or "unknown")
-    shutil.copy2(out / "latest.mp3", folder / f"{name}.mp3")
+    if record.get("transcripts") and (out / "latest.mp3").exists() and record.get("source") != "text":
+        shutil.copy2(out / "latest.mp3", folder / f"{name}.mp3")
     _write(folder / f"{name}.json", record)
     index.insert(0, {"key": key, "name": name, "heard_at": t["heard_at"], "letter": letter,
                      "time": issue_time, "missing": missing, "issue": None})
@@ -70,11 +71,14 @@ def _issue_body(repo: str, icao: str, rec: dict, entry: dict) -> str:
     loops = "\n\n".join(f"**Repetition {i + 1}** ({round(t['confidence'] * 100)}%):\n> {t['text']}"
                         for i, t in enumerate(rec.get("transcripts", [])))
     metar = (rec.get("metar") or {}).get("raw") or "not available"
+    source = (f"Text D-ATIS from {rec.get('source_url')} · [full data]({base}.json)"
+              if rec.get("source") == "text"
+              else f"Recording: [{entry['name']}.mp3]({base}.mp3) · [full data]({base}.json)")
     return f"""Could not read: **{', '.join(entry['missing'])}**
 
 - Station: {icao}, information **{entry['letter'] or '?'}**, valid from {entry['time'] or '?'}Z
 - Heard at: {entry['heard_at']}
-- Recording: [{entry['name']}.mp3]({base}.mp3) · [full data]({base}.json)
+- {source}
 - METAR: `{metar}`
 
 | Field | Value | Status | Readings |

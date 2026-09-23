@@ -26,11 +26,25 @@ that use the data must show it to their users.
 
 | ICAO | Airport | ATIS freq | Source stream |
 |------|---------|-----------|---------------|
-| LLHA | Haifa   | 135.400   | `https://llha.yarintw.com/ATIS.mp3` |
+| LLHA | Haifa   | 135.400   | Audio: `https://llha.yarintw.com/ATIS.mp3`, transcribed by us |
+| LLBG | Ben Gurion | D-ATIS | Text: [atis.guru/atis/LLBG](https://atis.guru/atis/LLBG) |
+| LLER | Ramon   | D-ATIS    | Text: [atis.guru/atis/LLER](https://atis.guru/atis/LLER) |
 
-The stream URLs were found on the [AOPA Israel radio page](https://www.aopa.org.il/radio).
+**Audio (LLHA).** The stream URL was found on the [AOPA Israel radio page](https://www.aopa.org.il/radio).
 At runtime we connect straight to the raw Icecast stream and don't depend on any
 web page.
+
+**Text D-ATIS (LLBG, LLER).** There is no public audio stream for these airports.
+[atis.guru](https://atis.guru) republishes the data-link ATIS (D-ATIS) that
+aircraft request over ACARS: *"an aircraft needs to request a D-ATIS in order to
+be picked up"*. A new text therefore only appears when some aircraft requests it,
+and it is often **hours or days old**. The age is always taken from the time
+written inside the ATIS (atis.guru's "received" time has been seen to disagree
+with it). Anything older than 90 minutes is marked **OLD** and greyed out, and
+the current METAR is shown next to it. In the JSON, text stations have
+`"source": "text"` and an `atis` list (arrival and departure) where each entry
+has `type`, `letter`, `issued_at`, `old`, `requested_by`, `fields` and `text`,
+plus `metar_now` at the top level.
 
 ## How it works
 

@@ -12,7 +12,7 @@ import traceback
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from . import audio, consensus, failures, metar, parse, transcribe
+from . import audio, consensus, failures, metar, parse, textatis, transcribe
 from .stations import STATIONS
 
 HISTORY_LIMIT = 96
@@ -141,13 +141,16 @@ def main(argv: list[str] | None = None) -> int:
     station = STATIONS[args.station]
     out = args.out / station.icao
     out.mkdir(parents=True, exist_ok=True)
+    if station.source == "text":
+        return text_main(station, out)
     latest_path, history_path = out / "latest.json", out / "history.json"
     previous = read_json(latest_path, {})
 
     record = {
         "disclaimer": DISCLAIMER,
+        "source": "audio",
         "station": {"icao": station.icao, "name": station.name,
-                    "frequency": station.frequency, "source": station.stream_url},
+                    "frequency": station.frequency, "source": station.source_url},
         "checked_at": iso(utcnow()),
     }
     try:
@@ -210,6 +213,106 @@ def main(argv: list[str] | None = None) -> int:
 
     summary = {k: v["value"] for k, v in result["fields"].items()}
     print(f"{station.icao} {result['quality']} loops={result['loops']} {summary}", flush=True)
+    return 0
+
+
+TEXT_SOURCE_NOTE = (
+    "Text D-ATIS republished by atis.guru from data-link requests made by aircraft. It only "
+    "updates when an aircraft requests it and may be hours or days old: check atis[].issued_at."
+)
+
+
+def text_main(station, out: Path) -> int:
+    """Fetch the published D-ATIS text (arrival and departure) for a station without audio."""
+    latest_path, history_path = out / "latest.json", out / "history.json"
+    previous = read_json(latest_path, {})
+    now = utcnow()
+    record = {
+        "disclaimer": DISCLAIMER + " " + TEXT_SOURCE_NOTE,
+        "source": "text",
+        "station": {"icao": station.icao, "name": station.name,
+                    "frequency": station.frequency, "source": station.source_url},
+        "checked_at": iso(now),
+    }
+    try:
+        cards = textatis.cards(textatis.fetch(station.page_url))
+        if not cards:
+            raise ValueError("no ATIS found on the page (layout may have changed)")
+    except Exception as exc:  # keep the previous texts, flagged as offline
+        traceback.print_exc()
+        record.update({k: v for k, v in previous.items() if k not in record})
+        record["status"] = "offline"
+        record["error"] = f"{type(exc).__name__}: {exc}"
+        write_json(latest_path, record)
+        return 1
+
+    try:
+        metars = sorted(metar.fetch(station.icao), key=lambda m: m["obsTime"], reverse=True)
+        metar_now = {"raw": metars[0]["rawOb"],
+                     "time": iso(datetime.fromtimestamp(metars[0]["obsTime"], tz=timezone.utc))} if metars else None
+    except Exception as exc:
+        print(f"METAR skipped: {exc!r}")
+        metar_now = None
+
+    entries = []
+    for c in cards:
+        fields = textatis.parse(c["text"], c["type"], station.runways)
+        received = textatis.parse_received(c["received"])
+        issued = textatis.issued_at((fields.get("time") or {}).get("value"), received, now)
+        age = round((now - issued).total_seconds() / 60) if issued else None
+        entries.append({
+            "type": c["type"],
+            "letter": (fields.get("letter") or {}).get("value"),
+            "issued_at": iso(issued) if issued else None,
+            "age_min_when_checked": age,
+            "old": age is None or age > textatis.OLD_AFTER_MIN,
+            "received_at": iso(received) if received else None,
+            "requested_by": c["requested_by"],
+            "fields": fields,
+            "missing_required": failures.missing_required(fields),
+            "text": c["text"],
+        })
+        if entries[-1]["missing_required"]:
+            failures.record(out, {
+                "source": "text",
+                "source_url": station.page_url,
+                "letter": entries[-1]["letter"],
+                "timing": {"heard_at": iso(now)},
+                "fields": fields,
+                "transcripts": [{"text": c["text"], "confidence": 1.0}],
+                "metar": metar_now,
+            }, entries[-1]["missing_required"])
+
+    freshest = max(entries, key=lambda e: e["issued_at"] or "")
+    record.update({
+        "status": "ok" if not freshest["old"] else "old",
+        "letter": freshest["letter"],
+        "fields": freshest["fields"],
+        "text": freshest["text"],
+        "atis": entries,
+        "metar_now": metar_now,
+        "timing": {
+            "checked_at": iso(now),
+            "atis_issued_at": freshest["issued_at"],
+            "published_at": iso(utcnow()),
+            "check_interval_min": CHECK_INTERVAL_MIN,
+            "stale_after": iso(now + timedelta(minutes=STALE_AFTER_MIN)),
+        },
+    })
+    write_json(latest_path, record)
+
+    history = read_json(history_path, [])
+    known = {(h["letter"], h.get("time"), h.get("type")) for h in history}
+    for e in sorted(entries, key=lambda e: e["issued_at"] or ""):
+        key = (e["letter"], (e["fields"].get("time") or {}).get("value"), e["type"])
+        if e["letter"] and key not in known:
+            history.insert(0, {"letter": key[0], "time": key[1], "type": e["type"],
+                               "first_seen": e["issued_at"] or iso(now), "text": e["text"]})
+    write_json(history_path, history[:HISTORY_LIMIT])
+
+    for e in entries:
+        print(f"{station.icao} {e['type']} {e['letter']} issued {e['issued_at']} "
+              f"({e['age_min_when_checked']} min old{', OLD' if e['old'] else ''})", flush=True)
     return 0
 
 

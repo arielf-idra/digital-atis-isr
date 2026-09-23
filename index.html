@@ -65,6 +65,14 @@
   .timing dd { margin: 0; font-variant-numeric: tabular-nums; }
   .timing dd.late { color: var(--bad); font-weight: 600; }
   a { color: var(--accent); }
+  [hidden] { display: none !important; }
+  .mono { font-family: var(--mono); font-size: 14px; word-break: break-word; }
+  .source { font-size: 14px; color: var(--muted); margin: 0; }
+  .atis-text { font: 14px/1.5 var(--mono); white-space: pre-wrap; margin: 12px 0 0; }
+  .old-tag { display: inline-block; background: var(--bad-bg); color: var(--bad); font-weight: 700;
+             font-size: 13px; border-radius: 6px; padding: 1px 8px; margin-left: 6px; vertical-align: middle; }
+  .card.old .letter { background: var(--muted); }
+  .card.old .fields, .card.old .atis-text { opacity: .55; }
 </style>
 </head>
 <body>
@@ -76,12 +84,26 @@
 
   <div class="disclaimer" role="note">
     <strong>Unofficial — not for operational use.</strong>
-    Automatic computer transcription of the ATIS broadcast. It can be wrong, incomplete, late or
-    unavailable. Always obtain the official ATIS on frequency.
+    <span id="disclaimerText">Automatic computer transcription of the ATIS broadcast. It can be wrong, incomplete, late or
+    unavailable.</span> Always obtain the official ATIS on frequency.
   </div>
 
   <div id="banner" class="banner"></div>
 
+  <div id="textView" hidden>
+    <section class="card">
+      <dl class="timing">
+        <dt>Last checked</dt><dd id="tChecked">—</dd>
+        <dt>Current weather</dt><dd id="tMetar" class="mono">—</dd>
+      </dl>
+      <p class="source">Source: <a id="tSource" href="#">atis.guru</a> — text D-ATIS collected from aircraft
+        data-link (ACARS) messages. It only updates when an aircraft requests the ATIS, so it can be hours
+        or days old.</p>
+    </section>
+    <div id="tCards"></div>
+  </div>
+
+  <div id="audioView">
   <section class="card">
     <div class="top">
       <div class="letter" id="letter">–</div>
@@ -104,6 +126,7 @@
     <p class="text" id="text"></p>
     <audio id="audio" controls preload="none"></audio>
   </section>
+  </div>
 
   <section class="card">
     <details>
@@ -128,7 +151,8 @@
 </main>
 
 <script>
-const STATIONS = { LLHA: "Haifa" };
+const STATIONS = { LLHA: "Haifa", LLBG: "Ben Gurion", LLER: "Ramon" };
+const OLD_AFTER_MIN = 90;
 const REPO_DATA = "https://raw.githubusercontent.com/arielf-idra/digital-atis-isr/gh-pages/data";
 // Served next to the data (locally) use it; on GitHub Pages read it from the gh-pages branch.
 const DATA_BASES = ["data", REPO_DATA];
@@ -154,7 +178,9 @@ function duration(ms) {
   if (s < 60) return `${s} s`;
   const m = Math.floor(s / 60);
   if (m < 60) return `${m} min ${s % 60} s`;
-  return `${Math.floor(m / 60)} h ${m % 60} min`;
+  const h = Math.floor(m / 60);
+  if (h < 24) return `${h} h ${m % 60} min`;
+  return `${Math.floor(h / 24)} d ${h % 24} h`;
 }
 function zulu(iso) { return iso.slice(11, 16) + "Z"; }
 function localTime(iso) { return new Date(iso).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); }
@@ -185,6 +211,7 @@ async function fetchData(file) {
 // Runs every second so the "time passed" figures are always current.
 function tick() {
   if (!current) return;
+  if (current.source === "text") return tickText();
   const d = current, t = timing(d), now = Date.now();
   const stale = now > Date.parse(t.staleAfter);
 
@@ -220,7 +247,91 @@ function tick() {
   }
 }
 
+// ---- Text D-ATIS stations (atis.guru) ----
+
+function renderText(d) {
+  current = d;
+  $("audioView").hidden = true;
+  $("textView").hidden = false;
+  $("disclaimerText").textContent = "Text D-ATIS republished by a third party (atis.guru). It is often hours or days old and may be wrong or unavailable.";
+  document.title = `${d.station.name} D-ATIS ${d.letter || ""}`;
+  $("tSource").href = d.station.source;
+  $("tMetar").textContent = d.metar_now ? d.metar_now.raw : "not available";
+
+  $("tCards").replaceChildren(...(d.atis || []).map((a, i) => {
+    const card = el("section", "card");
+    card.dataset.issued = a.issued_at || "";
+    const top = el("div", "top");
+    top.append(el("div", "letter", a.letter || "?"));
+    const head = el("div");
+    const h2 = el("h2", null, `${d.station.name} ${a.type === "ARR" ? "arrival" : "departure"} information ${a.letter || "?"}`);
+    const tag = el("span", "old-tag", "OLD");
+    tag.hidden = true;
+    h2.append(tag);
+    head.append(h2);
+    head.append(el("div", "meta", a.requested_by ? `Requested by ${a.requested_by}` : ""));
+    top.append(head);
+    card.append(top);
+
+    const dl = el("dl", "timing");
+    dl.append(el("dt", null, "ATIS time"), el("dd", "age", "—"));
+    card.append(dl);
+
+    const fields = el("div", "fields");
+    for (const [key, label] of Object.entries(LABELS)) {
+      const f = (a.fields || {})[key];
+      if (!f && key === "circuit") continue;
+      const box = el("div", `field ${f ? "confirmed" : "missing"}`);
+      box.append(el("div", "k", label));
+      box.append(el("div", "v", f ? String(f.value) : "—"));
+      fields.append(box);
+    }
+    card.append(fields);
+    card.append(el("p", "atis-text", a.text));
+    return card;
+  }));
+  $("raw").replaceChildren();
+  tick();
+}
+
+function tickText() {
+  const d = current, now = Date.now();
+  const staleAfter = Date.parse((d.timing || {}).stale_after || 0);
+  $("tChecked").textContent = `${duration(now - Date.parse(d.checked_at))} ago (${zulu(d.checked_at)})`;
+  $("tChecked").className = now > staleAfter ? "late" : "";
+
+  let freshest = Infinity;
+  for (const card of $("tCards").children) {
+    const issued = card.dataset.issued;
+    const ageMin = issued ? (now - Date.parse(issued)) / 60000 : Infinity;
+    freshest = Math.min(freshest, ageMin);
+    const old = ageMin > OLD_AFTER_MIN;
+    card.classList.toggle("old", old);
+    card.querySelector(".old-tag").hidden = !old;
+    const dd = card.querySelector(".age");
+    dd.textContent = issued ? `${zulu(issued)} — ${duration(now - Date.parse(issued))} ago` : "unknown";
+    dd.className = `age${old ? " late" : ""}`;
+  }
+
+  const banner = $("banner");
+  banner.className = "banner";
+  if (d.status === "offline") {
+    banner.className = "banner bad";
+    banner.textContent = "The D-ATIS source could not be reached. Showing the last texts received.";
+  } else if (now > staleAfter) {
+    banner.className = "banner bad";
+    banner.textContent = `Not checked for ${duration(now - Date.parse(d.checked_at))} — the service may be down.`;
+  } else if (freshest > OLD_AFTER_MIN) {
+    banner.className = "banner bad";
+    banner.textContent = freshest === Infinity ? "No D-ATIS available."
+      : `No current ATIS: the newest one available is ${duration(freshest * 60000)} old. See the current weather (METAR) below.`;
+  }
+}
+
 function render(d) {
+  if (d.source === "text") return renderText(d);
+  $("audioView").hidden = false;
+  $("textView").hidden = true;
   current = d;
   document.title = d.letter ? `${d.station.name} ATIS ${d.letter}` : "Digital ATIS";
   $("letter").textContent = d.letter || "?";
