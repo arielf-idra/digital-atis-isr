@@ -1,0 +1,156 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-26T06:10:52Z",
+  "letter": "L",
+  "fields": {
+    "letter": {
+      "value": "L",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "L"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "0550",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "0550"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "10 km+"
+      ]
+    },
+    "clouds": {
+      "value": "SCT 3500ft",
+      "votes": 1,
+      "of": 3,
+      "status": "single",
+      "readings": [
+        "SCT 3500ft"
+      ]
+    },
+    "temperature": {
+      "value": 26,
+      "votes": 2,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        26
+      ]
+    },
+    "dewpoint": {
+      "value": 18,
+      "votes": 2,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        18
+      ]
+    },
+    "qnh": {
+      "value": 1014,
+      "votes": 2,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        1014
+      ]
+    }
+  },
+  "text": "Haifa airport information LEMAP. Valid from 0550 UTC. Runway in use treat 3. Right hand circuit. Wind touchdown zone. Treat 50 degrees 5 knots. Visibility 10 kilometers or more. Clouds scattered 3,500 feet, temperature 26, dew point 18, QNH, 1014 millibars, for clearance and start-up contact high for clearance 121 decimal 80, end of information remap.",
+  "loops": 3,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 7,
+  "conflicts": [],
+  "metar": {
+    "raw": "METAR LLHA 260550Z AUTO VRB03KT 9999 SCT035 26/18 Q1014",
+    "time": "2026-09-26T05:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1014,
+        "agree": true
+      },
+      "temperature": {
+        "metar": 26,
+        "agree": true
+      },
+      "dewpoint": {
+        "metar": 18,
+        "agree": true
+      },
+      "wind": {
+        "metar": "VRB/3kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "SCT 3500ft",
+        "agree": true
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": []
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport information LEMAP. Valid from 0550 UTC. Runway in use treat 3. Right hand circuit. Wind touchdown zone. Treat 50 degrees 5 knots. Visibility 10 kilometers or more. Clouds scattered treat 1500 feet. Temperature 26 dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. Enter the information remap.",
+      "confidence": 0.692
+    },
+    {
+      "text": "Haifa airport, information LEMAP. Ballad from 0550 UTC. Runway in use treat 3. Right hand circuit. Wind touchdown zone, treat 50 degrees 5 knots. Visibility 10 kilometers or more. Clearance and startup contact high for clearance 121.80. Enter the information remap.",
+      "confidence": 0.717
+    },
+    {
+      "text": "Haifa airport information LEMAP. Valid from 0550 UTC. Runway in use treat 3. Right hand circuit. Wind touchdown zone. Treat 50 degrees 5 knots. Visibility 10 kilometers or more. Clouds scattered 3,500 feet, temperature 26, dew point 18, QNH, 1014 millibars, for clearance and start-up contact high for clearance 121 decimal 80, end of information remap.",
+      "confidence": 0.736
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-26T05:58:44Z",
+  "timing": {
+    "heard_at": "2026-09-26T06:10:52Z",
+    "first_heard_at": "2026-09-26T05:58:44Z",
+    "atis_issued_at": "2026-09-26T05:50:00Z",
+    "atis_age_min_when_heard": 21,
+    "published_at": "2026-09-26T06:11:18Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-26T06:25:52Z"
+  },
+  "missing_required": [
+    "runway",
+    "wind"
+  ]
+}

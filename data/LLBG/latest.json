@@ -1,0 +1,298 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk. Text D-ATIS republished by atis.guru from data-link requests made by aircraft. It only updates when an aircraft requests it and may be hours or days old: check atis[].issued_at.",
+  "source": "text",
+  "station": {
+    "icao": "LLBG",
+    "name": "Ben Gurion",
+    "frequency": "D-ATIS",
+    "source": "https://atis.guru/atis/LLBG"
+  },
+  "checked_at": "2026-10-17T18:25:00Z",
+  "status": "old",
+  "letter": "F",
+  "fields": {
+    "letter": {
+      "value": "F",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "F"
+      ]
+    },
+    "time": {
+      "value": "0750",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "0750"
+      ]
+    },
+    "runway": {
+      "value": "ARR 21 · DEP 26",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "ARR 21 · DEP 26"
+      ]
+    },
+    "wind": {
+      "value": "260/14kt",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "260/14kt"
+      ]
+    },
+    "visibility": {
+      "value": "9 km",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "9 km"
+      ]
+    },
+    "clouds": {
+      "value": "SCT 4500ft",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "SCT 4500ft"
+      ]
+    },
+    "temperature": {
+      "value": 26,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        26
+      ]
+    },
+    "dewpoint": {
+      "value": 15,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        15
+      ]
+    },
+    "qnh": {
+      "value": 1013,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        1013
+      ]
+    }
+  },
+  "text": "LLBG ARR ATIS F\n0750Z LLBG ARR INFO F.\nTIME 0750.\nEXP ILS APCH ARR RWY 21.\nDEP RWY 26.\nWIND 260 DEG, 14 KT.\nVIS 9 KM.\nCLD SCT 4500 FT.\nT 26. DP 15. QNH 1013.\nTREND TEMPO VIS 5 KM,\nDU.\nGNSS INTERFERENCES\nOCCURRENCES HAVE BEEN\nREPORTED WITHIN TEL AVIV\nFIR.\nFLOCKS OF BIRDS REPORTED\nIN THE VCY OF THE\nAERODROME.",
+  "atis": [
+    {
+      "type": "ARR",
+      "letter": "F",
+      "issued_at": "2026-10-16T07:50:00Z",
+      "age_min_when_checked": 2075,
+      "old": true,
+      "received_at": "2026-10-16T23:39:00Z",
+      "requested_by": "LY2366 (4X-EKC)",
+      "fields": {
+        "letter": {
+          "value": "F",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "F"
+          ]
+        },
+        "time": {
+          "value": "0750",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "0750"
+          ]
+        },
+        "runway": {
+          "value": "ARR 21 · DEP 26",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "ARR 21 · DEP 26"
+          ]
+        },
+        "wind": {
+          "value": "260/14kt",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "260/14kt"
+          ]
+        },
+        "visibility": {
+          "value": "9 km",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "9 km"
+          ]
+        },
+        "clouds": {
+          "value": "SCT 4500ft",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "SCT 4500ft"
+          ]
+        },
+        "temperature": {
+          "value": 26,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            26
+          ]
+        },
+        "dewpoint": {
+          "value": 15,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            15
+          ]
+        },
+        "qnh": {
+          "value": 1013,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            1013
+          ]
+        }
+      },
+      "missing_required": [],
+      "text": "LLBG ARR ATIS F\n0750Z LLBG ARR INFO F.\nTIME 0750.\nEXP ILS APCH ARR RWY 21.\nDEP RWY 26.\nWIND 260 DEG, 14 KT.\nVIS 9 KM.\nCLD SCT 4500 FT.\nT 26. DP 15. QNH 1013.\nTREND TEMPO VIS 5 KM,\nDU.\nGNSS INTERFERENCES\nOCCURRENCES HAVE BEEN\nREPORTED WITHIN TEL AVIV\nFIR.\nFLOCKS OF BIRDS REPORTED\nIN THE VCY OF THE\nAERODROME."
+    },
+    {
+      "type": "DEP",
+      "letter": "O",
+      "issued_at": "2026-10-15T15:50:00Z",
+      "age_min_when_checked": 3035,
+      "old": true,
+      "received_at": "2026-10-16T11:31:00Z",
+      "requested_by": "4X-ERD",
+      "fields": {
+        "letter": {
+          "value": "O",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "O"
+          ]
+        },
+        "time": {
+          "value": "1550",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "1550"
+          ]
+        },
+        "runway": {
+          "value": "ARR 21 · DEP 26",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "ARR 21 · DEP 26"
+          ]
+        },
+        "wind": {
+          "value": "350/7kt",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "350/7kt"
+          ]
+        },
+        "visibility": {
+          "value": "10 km+",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "10 km+"
+          ]
+        },
+        "clouds": {
+          "value": "FEW 4000ft",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "FEW 4000ft"
+          ]
+        },
+        "temperature": {
+          "value": 25,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            25
+          ]
+        },
+        "dewpoint": {
+          "value": 16,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            16
+          ]
+        },
+        "qnh": {
+          "value": 1016,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            1016
+          ]
+        }
+      },
+      "missing_required": [],
+      "text": "LLBG DEP ATIS O\n1550Z LLBG DEP INFO O.\nTIME 1550.\nDEP RWY 26.\nARR RWY 21.\nWIND 350 DEG, 7 KT.\nVIS 10 KM OR MORE.\nCLD FEW 4000 FT.\nT 25. DP 16. QNH 1016.\nNOSIG.\nCLEARANCE DELIVERY IS\nOPERATING ON 121 DECIMAL 950.\nGNSS INTERFERENCES OCCURRENCES\nHAVE BEEN REPORTED WITHIN TEL\nAVIV FIR.\nFLOCKS OF BIRDS REPORTED IN\nTHE VCY OF THE AERODROME."
+    }
+  ],
+  "metar_now": {
+    "raw": "METAR LLBG 171820Z VRB01KT CAVOK 23/17 Q1016 NOSIG RMK SCT070",
+    "time": "2026-10-17T18:20:00Z"
+  },
+  "timing": {
+    "checked_at": "2026-10-17T18:25:00Z",
+    "atis_issued_at": "2026-10-16T07:50:00Z",
+    "published_at": "2026-10-17T18:25:01Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-10-17T18:40:00Z"
+  }
+}

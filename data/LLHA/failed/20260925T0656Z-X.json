@@ -1,0 +1,162 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-25T06:56:52Z",
+  "letter": "X",
+  "fields": {
+    "letter": {
+      "value": "X",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "X"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "0650",
+      "votes": 3,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "0650"
+      ]
+    },
+    "runway": {
+      "value": "33",
+      "votes": 2,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "33"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "10 km+"
+      ]
+    },
+    "temperature": {
+      "value": 28,
+      "votes": 3,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        28
+      ]
+    },
+    "dewpoint": {
+      "value": 19,
+      "votes": 3,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        19
+      ]
+    },
+    "qnh": {
+      "value": 1015,
+      "votes": 3,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        1015
+      ]
+    }
+  },
+  "text": "Haifa airport, information X-ray, bad from 0650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, tree 5 row degrees. Night or not. Visibility 10 kilometer or more. Class category 1300 feet. Temperature 28, dew point 19. QNH 1015 millibuff. For clearance, start up contact HIFO clearance 1-21-80 and information is right.",
+  "loops": 4,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 8,
+  "conflicts": [],
+  "metar": {
+    "raw": "METAR LLHA 250650Z AUTO 34008KT 9999 SCT033 27/18 Q1015",
+    "time": "2026-09-25T06:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1015,
+        "agree": true
+      },
+      "temperature": {
+        "metar": 27,
+        "agree": false
+      },
+      "dewpoint": {
+        "metar": 18,
+        "agree": false
+      },
+      "wind": {
+        "metar": "340/8kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "SCT 3300ft",
+        "agree": null
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": [
+      "temperature",
+      "dewpoint"
+    ]
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport, information X-ray, bad from 0650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, tree 5 row degrees. Night or not. Visibility 10 kilometer or more. Class category 1300 feet. Temperature 28, dew point 19. QNH 1015 millibuff. For clearance, start up contact HIFO clearance 1-21-80 and information is right.",
+      "confidence": 0.593
+    },
+    {
+      "text": "Haifa airport information at Ray. Valid from 0650 T.T. Runway in use 33. Right hand circuit. Wind attack zone 850 degrees. 9 knots. Visibility 10 kilometers or more. COSCATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATATAT",
+      "confidence": 0.531
+    },
+    {
+      "text": "Haifa airport information X-ray. Val from 0650 UTC. Runway in use 3. Right hand circuit. Wind on zone 350 degrees. 9 knots. Visibility 10 kilometers or more. Cloud care 3300 feet. Temperature 28, dew point 19. QNH 1015 milliars. For clearance and start-up contact I for clearance 121 decimal 80. Enter the information at Ray.",
+      "confidence": 0.579
+    },
+    {
+      "text": "Haifa airport. Invading X-ray. Valid from 0650 UTC. Runway in use 23. Right hand circuit. Wind touchdown zone. 5-0 degrees, 9 knots. Visibility 10 kilometers or more. Cloud category on 300 feet. Temperature 28, dew point 19. QNH 1015 millibars. For clearance startup I hacked Haifa clearance 121 decimal 8-0. End information can occur.",
+      "confidence": 0.549
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-25T06:53:39Z",
+  "timing": {
+    "heard_at": "2026-09-25T06:56:52Z",
+    "first_heard_at": "2026-09-25T06:53:39Z",
+    "atis_issued_at": "2026-09-25T06:50:00Z",
+    "atis_age_min_when_heard": 7,
+    "published_at": "2026-09-25T06:57:55Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-25T07:11:52Z"
+  },
+  "missing_required": [
+    "wind"
+  ]
+}

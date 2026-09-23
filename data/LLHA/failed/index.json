@@ -1,0 +1,762 @@
+[
+  {
+    "key": "?-2026-09-26T19",
+    "name": "20260926T1903Z-unknown",
+    "heard_at": "2026-09-26T19:03:48Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/60"
+  },
+  {
+    "key": "W-1650",
+    "name": "20260926T1719Z-W",
+    "heard_at": "2026-09-26T17:19:22Z",
+    "letter": "W",
+    "time": "1650",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/59"
+  },
+  {
+    "key": "V-1550",
+    "name": "20260926T1655Z-V",
+    "heard_at": "2026-09-26T16:55:56Z",
+    "letter": "V",
+    "time": "1550",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/58"
+  },
+  {
+    "key": "P-0950",
+    "name": "20260926T0959Z-P",
+    "heard_at": "2026-09-26T09:59:53Z",
+    "letter": "P",
+    "time": "0950",
+    "missing": [
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/57"
+  },
+  {
+    "key": "O-0850",
+    "name": "20260926T0949Z-O",
+    "heard_at": "2026-09-26T09:49:25Z",
+    "letter": "O",
+    "time": "0850",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/56"
+  },
+  {
+    "key": "M-0650",
+    "name": "20260926T0709Z-M",
+    "heard_at": "2026-09-26T07:09:46Z",
+    "letter": "M",
+    "time": "0650",
+    "missing": [
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/55"
+  },
+  {
+    "key": "L-0550",
+    "name": "20260926T0610Z-L",
+    "heard_at": "2026-09-26T06:10:52Z",
+    "letter": "L",
+    "time": "0550",
+    "missing": [
+      "runway",
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/54"
+  },
+  {
+    "key": "H-0350",
+    "name": "20260926T0355Z-H",
+    "heard_at": "2026-09-26T03:55:35Z",
+    "letter": "H",
+    "time": "0350",
+    "missing": [
+      "runway",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/53"
+  },
+  {
+    "key": "?-2026-09-26T03",
+    "name": "20260926T0302Z-unknown",
+    "heard_at": "2026-09-26T03:02:05Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/52"
+  },
+  {
+    "key": "?-2026-09-26T02",
+    "name": "20260926T0201Z-unknown",
+    "heard_at": "2026-09-26T02:01:57Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/51"
+  },
+  {
+    "key": "?-2026-09-26T01",
+    "name": "20260926T0101Z-unknown",
+    "heard_at": "2026-09-26T01:01:18Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/50"
+  },
+  {
+    "key": "?-2026-09-26T00",
+    "name": "20260926T0001Z-unknown",
+    "heard_at": "2026-09-26T00:01:16Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/49"
+  },
+  {
+    "key": "?-2026-09-25T23",
+    "name": "20260925T2305Z-unknown",
+    "heard_at": "2026-09-25T23:05:37Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/48"
+  },
+  {
+    "key": "?-2026-09-25T22",
+    "name": "20260925T2200Z-unknown",
+    "heard_at": "2026-09-25T22:00:06Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/47"
+  },
+  {
+    "key": "?-2026-09-25T21",
+    "name": "20260925T2101Z-unknown",
+    "heard_at": "2026-09-25T21:01:57Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/46"
+  },
+  {
+    "key": "?-2026-09-25T20",
+    "name": "20260925T2002Z-unknown",
+    "heard_at": "2026-09-25T20:02:17Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/45"
+  },
+  {
+    "key": "?-2026-09-25T19",
+    "name": "20260925T1901Z-unknown",
+    "heard_at": "2026-09-25T19:01:52Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/44"
+  },
+  {
+    "key": "?-2026-09-25T18",
+    "name": "20260925T1801Z-unknown",
+    "heard_at": "2026-09-25T18:01:31Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/43"
+  },
+  {
+    "key": "?-2026-09-25T17",
+    "name": "20260925T1705Z-unknown",
+    "heard_at": "2026-09-25T17:05:06Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/42"
+  },
+  {
+    "key": "G-2026-09-25T17",
+    "name": "20260925T1702Z-G",
+    "heard_at": "2026-09-25T17:02:47Z",
+    "letter": "G",
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/41"
+  },
+  {
+    "key": "G-1550",
+    "name": "20260925T1557Z-G",
+    "heard_at": "2026-09-25T15:57:08Z",
+    "letter": "G",
+    "time": "1550",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/40"
+  },
+  {
+    "key": "D-1250",
+    "name": "20260925T1259Z-D",
+    "heard_at": "2026-09-25T12:59:00Z",
+    "letter": "D",
+    "time": "1250",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/39"
+  },
+  {
+    "key": "A-0950",
+    "name": "20260925T1022Z-A",
+    "heard_at": "2026-09-25T10:22:20Z",
+    "letter": "A",
+    "time": "0950",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/38"
+  },
+  {
+    "key": "Z-0850",
+    "name": "20260925T0857Z-Z",
+    "heard_at": "2026-09-25T08:57:50Z",
+    "letter": "Z",
+    "time": "0850",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/37"
+  },
+  {
+    "key": "Y-2026-09-25T08",
+    "name": "20260925T0852Z-Y",
+    "heard_at": "2026-09-25T08:52:28Z",
+    "letter": "Y",
+    "time": null,
+    "missing": [
+      "wind",
+      "temperature"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/36"
+  },
+  {
+    "key": "Y-0750",
+    "name": "20260925T0759Z-Y",
+    "heard_at": "2026-09-25T07:59:56Z",
+    "letter": "Y",
+    "time": "0750",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/35"
+  },
+  {
+    "key": "X-0650",
+    "name": "20260925T0656Z-X",
+    "heard_at": "2026-09-25T06:56:52Z",
+    "letter": "X",
+    "time": "0650",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/34"
+  },
+  {
+    "key": "W-0550",
+    "name": "20260925T0610Z-W",
+    "heard_at": "2026-09-25T06:10:24Z",
+    "letter": "W",
+    "time": "0550",
+    "missing": [
+      "runway",
+      "wind",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/33"
+  },
+  {
+    "key": "?-0550",
+    "name": "20260925T0604Z-unknown",
+    "heard_at": "2026-09-25T06:04:10Z",
+    "letter": null,
+    "time": "0550",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/32"
+  },
+  {
+    "key": "V-0450",
+    "name": "20260925T0521Z-V",
+    "heard_at": "2026-09-25T05:21:30Z",
+    "letter": "V",
+    "time": "0450",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/31"
+  },
+  {
+    "key": "U-0350",
+    "name": "20260925T0454Z-U",
+    "heard_at": "2026-09-25T04:54:21Z",
+    "letter": "U",
+    "time": "0350",
+    "missing": [
+      "temperature"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/30"
+  },
+  {
+    "key": "?-2026-09-25T03",
+    "name": "20260925T0300Z-unknown",
+    "heard_at": "2026-09-25T03:00:04Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/29"
+  },
+  {
+    "key": "?-2026-09-25T02",
+    "name": "20260925T0200Z-unknown",
+    "heard_at": "2026-09-25T02:00:28Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/28"
+  },
+  {
+    "key": "?-2026-09-25T01",
+    "name": "20260925T0100Z-unknown",
+    "heard_at": "2026-09-25T01:00:15Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/27"
+  },
+  {
+    "key": "?-2026-09-25T00",
+    "name": "20260925T0000Z-unknown",
+    "heard_at": "2026-09-25T00:00:01Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/26"
+  },
+  {
+    "key": "?-2026-09-24T23",
+    "name": "20260924T2301Z-unknown",
+    "heard_at": "2026-09-24T23:01:49Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/25"
+  },
+  {
+    "key": "?-2026-09-24T22",
+    "name": "20260924T2203Z-unknown",
+    "heard_at": "2026-09-24T22:03:10Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/24"
+  },
+  {
+    "key": "?-2026-09-24T21",
+    "name": "20260924T2101Z-unknown",
+    "heard_at": "2026-09-24T21:01:54Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/23"
+  },
+  {
+    "key": "?-2026-09-24T20",
+    "name": "20260924T2003Z-unknown",
+    "heard_at": "2026-09-24T20:03:54Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/22"
+  },
+  {
+    "key": "S-1850",
+    "name": "20260924T1958Z-S",
+    "heard_at": "2026-09-24T19:58:56Z",
+    "letter": "S",
+    "time": "1850",
+    "missing": [
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/21"
+  },
+  {
+    "key": "Q-2026-09-24T17",
+    "name": "20260924T1756Z-Q",
+    "heard_at": "2026-09-24T17:56:54Z",
+    "letter": "Q",
+    "time": null,
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/20"
+  },
+  {
+    "key": "N-1350",
+    "name": "20260924T1434Z-N",
+    "heard_at": "2026-09-24T14:34:43Z",
+    "letter": "N",
+    "time": "1350",
+    "missing": [
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/19"
+  },
+  {
+    "key": "?-1150",
+    "name": "20260924T1253Z-unknown",
+    "heard_at": "2026-09-24T12:53:17Z",
+    "letter": null,
+    "time": "1150",
+    "missing": [
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/18"
+  },
+  {
+    "key": "J-1050",
+    "name": "20260924T1131Z-J",
+    "heard_at": "2026-09-24T11:31:12Z",
+    "letter": "J",
+    "time": "1050",
+    "missing": [
+      "temperature"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/17"
+  },
+  {
+    "key": "H-0850",
+    "name": "20260924T0859Z-H",
+    "heard_at": "2026-09-24T08:59:59Z",
+    "letter": "H",
+    "time": "0850",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/16"
+  },
+  {
+    "key": "C-0750",
+    "name": "20260924T0819Z-C",
+    "heard_at": "2026-09-24T08:19:33Z",
+    "letter": "C",
+    "time": "0750",
+    "missing": [
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/15"
+  },
+  {
+    "key": "B-0750",
+    "name": "20260924T0801Z-B",
+    "heard_at": "2026-09-24T08:01:18Z",
+    "letter": "B",
+    "time": "0750",
+    "missing": [
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/14"
+  },
+  {
+    "key": "?-2026-09-24T04",
+    "name": "20260924T0400Z-unknown",
+    "heard_at": "2026-09-24T04:00:57Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/13"
+  },
+  {
+    "key": "?-2026-09-24T03",
+    "name": "20260924T0301Z-unknown",
+    "heard_at": "2026-09-24T03:01:02Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/12"
+  },
+  {
+    "key": "?-2026-09-24T02",
+    "name": "20260924T0201Z-unknown",
+    "heard_at": "2026-09-24T02:01:16Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/11"
+  },
+  {
+    "key": "?-2026-09-24T01",
+    "name": "20260924T0100Z-unknown",
+    "heard_at": "2026-09-24T01:00:56Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/10"
+  },
+  {
+    "key": "?-2026-09-24T00",
+    "name": "20260924T0002Z-unknown",
+    "heard_at": "2026-09-24T00:02:40Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/9"
+  },
+  {
+    "key": "?-2026-09-23T23",
+    "name": "20260923T2300Z-unknown",
+    "heard_at": "2026-09-23T23:00:30Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/8"
+  },
+  {
+    "key": "?-2026-09-23T22",
+    "name": "20260923T2205Z-unknown",
+    "heard_at": "2026-09-23T22:05:05Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/7"
+  },
+  {
+    "key": "?-2026-09-23T21",
+    "name": "20260923T2100Z-unknown",
+    "heard_at": "2026-09-23T21:00:29Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/6"
+  },
+  {
+    "key": "?-2026-09-23T20",
+    "name": "20260923T2000Z-unknown",
+    "heard_at": "2026-09-23T20:00:10Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/5"
+  },
+  {
+    "key": "?-2026-09-23T19",
+    "name": "20260923T1904Z-unknown",
+    "heard_at": "2026-09-23T19:04:36Z",
+    "letter": null,
+    "time": null,
+    "missing": [
+      "runway",
+      "wind",
+      "temperature",
+      "qnh"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/4"
+  },
+  {
+    "key": "U-1750",
+    "name": "20260923T1902Z-U",
+    "heard_at": "2026-09-23T19:02:15Z",
+    "letter": "U",
+    "time": "1750",
+    "missing": [
+      "runway",
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/3"
+  },
+  {
+    "key": "T-1650",
+    "name": "20260923T1704Z-T",
+    "heard_at": "2026-09-23T17:04:01Z",
+    "letter": "T",
+    "time": "1650",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/2"
+  },
+  {
+    "key": "R-1450",
+    "name": "20260923T1501Z-R",
+    "heard_at": "2026-09-23T15:01:34Z",
+    "letter": "R",
+    "time": "1450",
+    "missing": [
+      "wind"
+    ],
+    "issue": "https://github.com/arielf-idra/digital-atis-isr/issues/1"
+  }
+]
