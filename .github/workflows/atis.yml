@@ -1,0 +1,76 @@
+name: ATIS
+
+on:
+  schedule:
+    # Each run works for ~50 min; the concurrency group queues the next one,
+    # so runs chain back to back even when GitHub delays scheduled starts.
+    - cron: "*/20 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["atis/**", "site/**", "scripts/**", ".github/workflows/atis.yml"]
+
+concurrency:
+  group: atis
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt pytest
+      - run: pytest -q
+
+  capture:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 58
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out gh-pages
+        run: |
+          git config --global user.name "digital-atis-bot"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin gh-pages; then
+            git clone --depth 1 --branch gh-pages "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" pages
+          else
+            mkdir pages && cd pages && git init -q -b gh-pages
+            git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+            git commit -q --allow-empty -m "Latest ATIS"
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: pip install -r requirements.txt
+
+      - name: Cache speech model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small.en
+
+      - name: Keep the schedule alive
+        # GitHub disables scheduled workflows after 60 days without repo activity.
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/atis.yml/enable"
+
+      - name: Capture and publish
+        # A push-triggered run just deploys the new site and one fresh reading.
+        run: >
+          python scripts/publish_loop.py --pages pages
+          --minutes ${{ github.event_name == 'push' && '1' || '50' }}
