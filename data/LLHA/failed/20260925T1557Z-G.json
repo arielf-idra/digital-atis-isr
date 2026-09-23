@@ -1,0 +1,167 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-25T15:57:08Z",
+  "letter": "G",
+  "fields": {
+    "letter": {
+      "value": "G",
+      "votes": 3,
+      "of": 4,
+      "status": "majority",
+      "readings": [
+        "F",
+        "G"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "1550",
+      "votes": 3,
+      "of": 4,
+      "status": "majority",
+      "readings": [
+        "1550",
+        "1450"
+      ]
+    },
+    "runway": {
+      "value": "33",
+      "votes": 3,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "33"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "wind": {
+      "value": null,
+      "votes": 1,
+      "of": 4,
+      "status": "conflict",
+      "readings": [
+        "340/11kt",
+        "330/10kt"
+      ]
+    },
+    "temperature": {
+      "value": 27,
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        27
+      ]
+    },
+    "dewpoint": {
+      "value": 18,
+      "votes": 3,
+      "of": 4,
+      "status": "majority",
+      "readings": [
+        18,
+        17
+      ]
+    },
+    "qnh": {
+      "value": 1014,
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        1014
+      ]
+    }
+  },
+  "text": "Haifa airport information Gulf. Valid from 1550 UTC. Runway in use tree tree. Right hand circuit. Wind touchdown zone. Tree tree 0 degrees. 10 knots. Kevo K. Temperature 27 dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. End of information. Golf.",
+  "loops": 4,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 7,
+  "conflicts": [
+    "wind"
+  ],
+  "metar": {
+    "raw": "METAR LLHA 251550Z AUTO 33011KT CAVOK 27/17 Q1014",
+    "time": "2026-09-25T15:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1014,
+        "agree": true
+      },
+      "temperature": {
+        "metar": 27,
+        "agree": true
+      },
+      "dewpoint": {
+        "metar": 17,
+        "agree": false
+      },
+      "wind": {
+        "metar": "330/11kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "NSC",
+        "agree": null
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": null
+      }
+    },
+    "differs": [
+      "dewpoint"
+    ]
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport information Foxtrot. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 340 degrees. 11 knots. Kevo K. temperature 27 dew point one seven QNH one zero one four millibars for clearance and startup contact high for clearance one two one decimal eight zero",
+      "confidence": 0.755
+    },
+    {
+      "text": "Haifa airport information Gulf. Valid from 1550 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 33.0 degrees 10 knots. Kevo K. Temperature 27 dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. End of information Golf.",
+      "confidence": 0.671
+    },
+    {
+      "text": "Haifa airport information Gulf. Valid from 1550 UTC. Runway in use tree tree. Right hand circuit. Wind touchdown zone. Tree tree 0 degrees. 10 knots. Kevo K. Temperature 27 dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. End of information. Golf.",
+      "confidence": 0.731
+    },
+    {
+      "text": "Haifa airport information Gulf. Ballad from 1550 UTC. Runway in use Treetree. Right hand circuit. Wind touchdown zone. Treetree 0 degrees. 10 knots. Kevo K. Temperature 27 dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. End of information. Golf.",
+      "confidence": 0.729
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-25T15:57:08Z",
+  "timing": {
+    "heard_at": "2026-09-25T15:57:08Z",
+    "first_heard_at": "2026-09-25T15:57:08Z",
+    "atis_issued_at": "2026-09-25T15:50:00Z",
+    "atis_age_min_when_heard": 7,
+    "published_at": "2026-09-25T15:57:28Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-25T16:12:08Z"
+  },
+  "missing_required": [
+    "wind"
+  ]
+}

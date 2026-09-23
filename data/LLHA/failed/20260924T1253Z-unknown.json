@@ -1,0 +1,187 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-24T12:53:17Z",
+  "letter": null,
+  "fields": {
+    "letter": {
+      "value": null,
+      "votes": 1,
+      "of": 4,
+      "status": "conflict",
+      "readings": [
+        "L",
+        "M"
+      ],
+      "method": "acoustic",
+      "confidence": 0.655
+    },
+    "time": {
+      "value": "1150",
+      "votes": 2,
+      "of": 3,
+      "status": "majority",
+      "readings": [
+        "1150",
+        "1250"
+      ]
+    },
+    "runway": {
+      "value": "33",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "33"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "wind": {
+      "value": "310/8kt V280-340",
+      "votes": 2,
+      "of": 3,
+      "status": "majority",
+      "readings": [
+        "310/8kt V280-340",
+        "330/10kt"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 2,
+      "of": 3,
+      "status": "majority",
+      "readings": [
+        "10 km+",
+        "10 km"
+      ]
+    },
+    "clouds": {
+      "value": null,
+      "votes": 1,
+      "of": 3,
+      "status": "conflict",
+      "readings": [
+        "SCT 2800ft",
+        "SCT 2500ft"
+      ]
+    },
+    "temperature": {
+      "value": 30,
+      "votes": 2,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        30
+      ]
+    },
+    "dewpoint": {
+      "value": null,
+      "votes": 1,
+      "of": 3,
+      "status": "conflict",
+      "readings": [
+        21,
+        19
+      ]
+    },
+    "qnh": {
+      "value": null,
+      "votes": 1,
+      "of": 3,
+      "status": "conflict",
+      "readings": [
+        1015,
+        1014
+      ]
+    }
+  },
+  "text": "Haifa airport, information LEMAP. Valid from 1150 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees 8 knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds scattered 2800 feet. Temperature 30 dew point 21. QNH 1015 hectopascals. for clearance and startup contact high for clearance 1 2 1 decimal 8 0 enter the information in Lee Math.",
+  "loops": 3,
+  "complete_loops": true,
+  "quality": "poor",
+  "confirmed_fields": 6,
+  "conflicts": [
+    "letter",
+    "clouds",
+    "dewpoint",
+    "qnh"
+  ],
+  "metar": {
+    "raw": "METAR LLHA 241150Z AUTO 30009KT 9999 SCT028 29/21 Q1015",
+    "time": "2026-09-24T11:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1015,
+        "agree": null
+      },
+      "temperature": {
+        "metar": 29,
+        "agree": false
+      },
+      "dewpoint": {
+        "metar": 21,
+        "agree": null
+      },
+      "wind": {
+        "metar": "300/9kt",
+        "agree": true
+      },
+      "clouds": {
+        "metar": "SCT 2800ft",
+        "agree": null
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": [
+      "temperature"
+    ]
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport, information LEMAP. Valid from 1150 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees 8 knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds scattered 2800 feet. Temperature 30 dew point 21. QNH 1015 hectopascals. for clearance and startup contact high for clearance 1 2 1 decimal 8 0 enter the information in Lee Math.",
+      "confidence": 0.699
+    },
+    {
+      "text": "Haifa airport, information LEMAP. Valid from 1150 UTC. Runway in use 33. Right hand circuit. Wind Touchdown zone 310 degrees 8 knots. Varying between 280 and 340 degrees. Visibility 10 kilometers.",
+      "confidence": 0.679
+    },
+    {
+      "text": "Haifa airport information mic. Ballad from 1250 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 30 degrees. 10 knots. Visibility 10 kilometers or more. Clouds scattered 2500 feet. Temperature 30. Dew point 19. QNH 1014 millibars. For clearance and startup contact, high for clearance 121.80. End of information, Mike.",
+      "confidence": 0.719
+    }
+  ],
+  "model": "small.en",
+  "status": "unreadable",
+  "first_seen": "2026-09-24T12:53:17Z",
+  "timing": {
+    "heard_at": "2026-09-24T12:53:17Z",
+    "first_heard_at": "2026-09-24T12:53:17Z",
+    "atis_issued_at": "2026-09-24T11:50:00Z",
+    "atis_age_min_when_heard": 63,
+    "published_at": "2026-09-24T12:54:01Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-24T13:08:17Z"
+  },
+  "missing_required": [
+    "qnh"
+  ]
+}

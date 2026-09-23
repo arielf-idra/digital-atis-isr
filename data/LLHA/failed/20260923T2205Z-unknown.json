@@ -1,0 +1,44 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-23T22:05:05Z",
+  "letter": null,
+  "fields": {},
+  "text": "Auto is not available. Auto is not available. Auto is not available. Auto is not available. Audits not available. Audits not available. Audits not available. Audits not available, Audits not available, Audits not available, Audits not available, Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available Audits not available Audits not available Audits not available But it's not available.",
+  "loops": 1,
+  "complete_loops": false,
+  "quality": "poor",
+  "confirmed_fields": 0,
+  "conflicts": [],
+  "metar": null,
+  "transcripts": [
+    {
+      "text": "Auto is not available. Auto is not available. Auto is not available. Auto is not available. Audits not available. Audits not available. Audits not available. Audits not available, Audits not available, Audits not available, Audits not available, Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available Audits not available Audits not available Audits not available But it's not available.",
+      "confidence": 0.92
+    }
+  ],
+  "model": "small.en",
+  "status": "unreadable",
+  "first_seen": "2026-09-23T22:05:05Z",
+  "timing": {
+    "heard_at": "2026-09-23T22:05:05Z",
+    "first_heard_at": "2026-09-23T22:05:05Z",
+    "atis_issued_at": null,
+    "atis_age_min_when_heard": null,
+    "published_at": "2026-09-23T22:05:19Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-23T22:20:05Z"
+  },
+  "missing_required": [
+    "runway",
+    "wind",
+    "temperature",
+    "qnh"
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk. Text D-ATIS republished by atis.guru from data-link requests made by aircraft. It only updates when an aircraft requests it and may be hours or days old: check atis[].issued_at.",
+  "source": "text",
+  "station": {
+    "icao": "LLER",
+    "name": "Ramon",
+    "frequency": "D-ATIS",
+    "source": "https://atis.guru/atis/LLER"
+  },
+  "checked_at": "2026-10-11T01:47:10Z",
+  "status": "old",
+  "letter": "I",
+  "fields": {
+    "letter": {
+      "value": "I",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "I"
+      ]
+    },
+    "time": {
+      "value": "1120",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "1120"
+      ]
+    },
+    "runway": {
+      "value": "01",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "01"
+      ]
+    },
+    "wind": {
+      "value": "010/15kt",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "010/15kt"
+      ]
+    },
+    "visibility": {
+      "value": "CAVOK",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "CAVOK"
+      ]
+    },
+    "clouds": {
+      "value": "CAVOK",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "CAVOK"
+      ]
+    },
+    "temperature": {
+      "value": 36,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        36
+      ]
+    },
+    "dewpoint": {
+      "value": 13,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        13
+      ]
+    },
+    "qnh": {
+      "value": 1008,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        1008
+      ]
+    }
+  },
+  "text": "LLER ARR ATIS I\n1120Z LLER. INFO I.\nTIME 1120.\nEXP ILS APPROACH FOR\nACTIVE RUNWAY 01.\nWIND TDZ 010 DEG, 15 KT.\nCAVOK.\nT 36.\nDP 13.\nQNH 1008.\nTOWER AND GND OPERATING\nON 119 DECIMAL 0.\nPOSSIBLE GNSS\nINTERFERENCE.\nE PAPI FOR RWY 19\nINOPERATIVE.\nRWY REPORT.\nRWY REPORT END.\nINFO I.",
+  "atis": [
+    {
+      "type": "ARR",
+      "letter": "I",
+      "issued_at": "2026-10-08T11:20:00Z",
+      "age_min_when_checked": 3747,
+      "old": true,
+      "received_at": "2026-10-09T00:20:00Z",
+      "requested_by": "23507S",
+      "fields": {
+        "letter": {
+          "value": "I",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "I"
+          ]
+        },
+        "time": {
+          "value": "1120",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "1120"
+          ]
+        },
+        "runway": {
+          "value": "01",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "01"
+          ]
+        },
+        "wind": {
+          "value": "010/15kt",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "010/15kt"
+          ]
+        },
+        "visibility": {
+          "value": "CAVOK",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CAVOK"
+          ]
+        },
+        "clouds": {
+          "value": "CAVOK",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CAVOK"
+          ]
+        },
+        "temperature": {
+          "value": 36,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            36
+          ]
+        },
+        "dewpoint": {
+          "value": 13,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            13
+          ]
+        },
+        "qnh": {
+          "value": 1008,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            1008
+          ]
+        }
+      },
+      "missing_required": [],
+      "text": "LLER ARR ATIS I\n1120Z LLER. INFO I.\nTIME 1120.\nEXP ILS APPROACH FOR\nACTIVE RUNWAY 01.\nWIND TDZ 010 DEG, 15 KT.\nCAVOK.\nT 36.\nDP 13.\nQNH 1008.\nTOWER AND GND OPERATING\nON 119 DECIMAL 0.\nPOSSIBLE GNSS\nINTERFERENCE.\nE PAPI FOR RWY 19\nINOPERATIVE.\nRWY REPORT.\nRWY REPORT END.\nINFO I."
+    },
+    {
+      "type": "DEP",
+      "letter": "Y",
+      "issued_at": "2026-09-20T19:50:00Z",
+      "age_min_when_checked": 29157,
+      "old": true,
+      "received_at": "2026-09-21T01:14:00Z",
+      "requested_by": "9HBBH",
+      "fields": {
+        "letter": {
+          "value": "Y",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "Y"
+          ]
+        },
+        "time": {
+          "value": "1950",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "1950"
+          ]
+        },
+        "runway": {
+          "value": "01",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "01"
+          ]
+        },
+        "wind": {
+          "value": "030/10kt",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "030/10kt"
+          ]
+        },
+        "visibility": {
+          "value": "CAVOK",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CAVOK"
+          ]
+        },
+        "clouds": {
+          "value": "CAVOK",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CAVOK"
+          ]
+        },
+        "temperature": {
+          "value": 30,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            30
+          ]
+        },
+        "dewpoint": {
+          "value": 11,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            11
+          ]
+        },
+        "qnh": {
+          "value": 1012,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            1012
+          ]
+        }
+      },
+      "missing_required": [],
+      "text": "LLER DEP ATIS Y\n1950Z LLER. INFO Y.\nTIME 1950.\nEXP ILS APPROACH FOR\nACTIVE RUNWAY 01.\nWIND TDZ 030 DEG, 10 KT.\nCAVOK.\nT 30.\nDP 11.\nQNH 1012.\nTOWER AND GND OPERATING\nON 119 DECIMAL 0.\nPOSSIBLE GNSS\nINTERFERENCE.\nE PAPI FOR RWY 19\nINOPERATIVE.\nRWY REPORT.\nRWY REPORT END.\nINFO Y."
+    }
+  ],
+  "metar_now": {
+    "raw": "METAR LLER 110050Z AUTO 01012KT CAVOK 25/18 Q1010 RMK SCT150",
+    "time": "2026-10-11T00:50:00Z"
+  },
+  "timing": {
+    "checked_at": "2026-10-11T01:47:10Z",
+    "atis_issued_at": "2026-10-08T11:20:00Z",
+    "published_at": "2026-10-11T01:47:11Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-10-11T02:02:10Z"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-24T08:19:33Z",
+  "letter": "C",
+  "fields": {
+    "letter": {
+      "value": "C",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "C"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "0750",
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        "0750"
+      ]
+    },
+    "runway": {
+      "value": "33",
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        "33"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "wind": {
+      "value": "320/6kt V280-360",
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        "320/6kt V280-360"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        "10 km+"
+      ]
+    },
+    "clouds": {
+      "value": "FEW 4500ft",
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        "FEW 4500ft"
+      ]
+    },
+    "temperature": {
+      "value": 29,
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        29
+      ]
+    },
+    "dewpoint": {
+      "value": 19,
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        19
+      ]
+    },
+    "qnh": {
+      "value": null,
+      "votes": 1,
+      "of": 2,
+      "status": "conflict",
+      "readings": [
+        1015,
+        1016
+      ]
+    }
+  },
+  "text": "Haifa airport information Charlie. Valid from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 6 knots. Varying between 280 and 360 degrees. Visibility 10 kilometers or more. Clouds view 4500 feet. Temperature 29er. Dew point 19er. QNH, 1016 millibars. For clearance and start-up contact high for clearance 121. 80 swocks of birds reported on final. End of information Charlie.",
+  "loops": 2,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 9,
+  "conflicts": [
+    "qnh"
+  ],
+  "metar": {
+    "raw": "METAR LLHA 240750Z AUTO 34007KT 9999 FEW045 29/19 Q1016",
+    "time": "2026-09-24T07:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1016,
+        "agree": null
+      },
+      "temperature": {
+        "metar": 29,
+        "agree": true
+      },
+      "dewpoint": {
+        "metar": 19,
+        "agree": true
+      },
+      "wind": {
+        "metar": "340/7kt",
+        "agree": true
+      },
+      "clouds": {
+        "metar": "FEW 4500ft",
+        "agree": true
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": []
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport information Charlie. Valid from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees 6 knots. Varying between 280 and 360 degrees. Visibility 10 kilometers or more. Clouds view 4500 feet. Temperature 29er dew point 19. QNH 1015 hectopascals. for clearance and startup contact high for clearance 121. Eighty flocks of birds reported on final. End of information Charlie.",
+      "confidence": 0.723
+    },
+    {
+      "text": "Haifa airport information Charlie. Valid from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 6 knots. Varying between 280 and 360 degrees. Visibility 10 kilometers or more. Clouds view 4500 feet. Temperature 29er. Dew point 19er. QNH, 1016 millibars. For clearance and start-up contact high for clearance 121. 80 swocks of birds reported on final. End of information Charlie.",
+      "confidence": 0.77
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-24T08:03:57Z",
+  "timing": {
+    "heard_at": "2026-09-24T08:19:33Z",
+    "first_heard_at": "2026-09-24T08:03:57Z",
+    "atis_issued_at": "2026-09-24T07:50:00Z",
+    "atis_age_min_when_heard": 30,
+    "published_at": "2026-09-24T08:20:05Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-24T08:34:33Z"
+  },
+  "missing_required": [
+    "qnh"
+  ]
+}
