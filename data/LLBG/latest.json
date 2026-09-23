@@ -1,0 +1,298 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk. Text D-ATIS republished by atis.guru from data-link requests made by aircraft. It only updates when an aircraft requests it and may be hours or days old: check atis[].issued_at.",
+  "source": "text",
+  "station": {
+    "icao": "LLBG",
+    "name": "Ben Gurion",
+    "frequency": "D-ATIS",
+    "source": "https://atis.guru/atis/LLBG"
+  },
+  "checked_at": "2026-09-26T20:48:43Z",
+  "status": "old",
+  "letter": "G",
+  "fields": {
+    "letter": {
+      "value": "G",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "G"
+      ]
+    },
+    "time": {
+      "value": "0120",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "0120"
+      ]
+    },
+    "runway": {
+      "value": "ARR 21 · DEP 26",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "ARR 21 · DEP 26"
+      ]
+    },
+    "wind": {
+      "value": "CALM",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "CALM"
+      ]
+    },
+    "visibility": {
+      "value": "CAVOK",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "CAVOK"
+      ]
+    },
+    "clouds": {
+      "value": "CAVOK",
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        "CAVOK"
+      ]
+    },
+    "temperature": {
+      "value": 24,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        24
+      ]
+    },
+    "dewpoint": {
+      "value": 13,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        13
+      ]
+    },
+    "qnh": {
+      "value": 1009,
+      "status": "confirmed",
+      "votes": 1,
+      "of": 1,
+      "readings": [
+        1009
+      ]
+    }
+  },
+  "text": "LLBG ARR ATIS G\n0121Z LLBG ARR INFO G.\nTIME 0120.\nEXP ILS APCH ARR RWY 21.\nDEP RWY 26.\nWIND CALM.\nCAVOK.\nT 24. DP 13. QNH 1009.\nNOSIG.\nGNSS INTERFERENCES OCCURRENCES HAVE BEEN\nREPORTED WITHIN TEL AVIV FIR.\nFLOCKS OF BIRDS REPORTED IN THE VCY OF THE\nAERODROME. AUTO UPDATE ENDS AT 0321",
+  "atis": [
+    {
+      "type": "ARR",
+      "letter": "G",
+      "issued_at": "2026-09-26T01:20:00Z",
+      "age_min_when_checked": 1169,
+      "old": true,
+      "received_at": "2026-09-26T17:38:00Z",
+      "requested_by": "4X-ECA",
+      "fields": {
+        "letter": {
+          "value": "G",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "G"
+          ]
+        },
+        "time": {
+          "value": "0120",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "0120"
+          ]
+        },
+        "runway": {
+          "value": "ARR 21 · DEP 26",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "ARR 21 · DEP 26"
+          ]
+        },
+        "wind": {
+          "value": "CALM",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CALM"
+          ]
+        },
+        "visibility": {
+          "value": "CAVOK",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CAVOK"
+          ]
+        },
+        "clouds": {
+          "value": "CAVOK",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CAVOK"
+          ]
+        },
+        "temperature": {
+          "value": 24,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            24
+          ]
+        },
+        "dewpoint": {
+          "value": 13,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            13
+          ]
+        },
+        "qnh": {
+          "value": 1009,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            1009
+          ]
+        }
+      },
+      "missing_required": [],
+      "text": "LLBG ARR ATIS G\n0121Z LLBG ARR INFO G.\nTIME 0120.\nEXP ILS APCH ARR RWY 21.\nDEP RWY 26.\nWIND CALM.\nCAVOK.\nT 24. DP 13. QNH 1009.\nNOSIG.\nGNSS INTERFERENCES OCCURRENCES HAVE BEEN\nREPORTED WITHIN TEL AVIV FIR.\nFLOCKS OF BIRDS REPORTED IN THE VCY OF THE\nAERODROME. AUTO UPDATE ENDS AT 0321"
+    },
+    {
+      "type": "DEP",
+      "letter": "W",
+      "issued_at": "2026-09-25T10:50:00Z",
+      "age_min_when_checked": 2039,
+      "old": true,
+      "received_at": "2026-09-25T14:46:00Z",
+      "requested_by": "4X-ECD",
+      "fields": {
+        "letter": {
+          "value": "W",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "W"
+          ]
+        },
+        "time": {
+          "value": "1050",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "1050"
+          ]
+        },
+        "runway": {
+          "value": "ARR 30 · DEP 26",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "ARR 30 · DEP 26"
+          ]
+        },
+        "wind": {
+          "value": "340/10kt V300-360",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "340/10kt V300-360"
+          ]
+        },
+        "visibility": {
+          "value": "CAVOK",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CAVOK"
+          ]
+        },
+        "clouds": {
+          "value": "CAVOK",
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            "CAVOK"
+          ]
+        },
+        "temperature": {
+          "value": 34,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            34
+          ]
+        },
+        "dewpoint": {
+          "value": 17,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            17
+          ]
+        },
+        "qnh": {
+          "value": 1008,
+          "status": "confirmed",
+          "votes": 1,
+          "of": 1,
+          "readings": [
+            1008
+          ]
+        }
+      },
+      "missing_required": [],
+      "text": "LLBG DEP ATIS W\n1050Z LLBG DEP INFO W.\nTIME 1050.\nDEP RWY 26.\nARR RWY 30.\nWIND 340 DEG, 10 KT,, VRB BTN 300 AND 360 DEG.\nCAVOK.\nT 34. DP 17. QNH 1008.\nNOSIG.\nDEPARTURES VIA TOMAL AND SALAM EXP SID RIPUD.\nTFC VIA SALAM EXP RADAR VECTORS AFTER RIPUD.\nCLEARANCE DELIVERY IS OPERATING ON 121 DECIMAL\n950.\nGNSS INTERFERENCES OCCURRENCES HAVE BEEN\nREPORTED WITHIN TEL AVIV FIR.\nFLOCKS OF BIRDS REPORTED IN THE VCY OF THE\nAERODROME."
+    }
+  ],
+  "metar_now": {
+    "raw": "METAR LLBG 262020Z 29006KT 9999 SCT037 25/17 Q1013 NOSIG",
+    "time": "2026-09-26T20:20:00Z"
+  },
+  "timing": {
+    "checked_at": "2026-09-26T20:48:43Z",
+    "atis_issued_at": "2026-09-26T01:20:00Z",
+    "published_at": "2026-09-26T20:48:43Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-26T21:03:43Z"
+  }
+}

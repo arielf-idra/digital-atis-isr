@@ -1,0 +1,163 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-23T15:01:34Z",
+  "letter": "R",
+  "fields": {
+    "letter": {
+      "value": "R",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "R"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "1450",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "1450"
+      ]
+    },
+    "runway": {
+      "value": "33",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "33"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "10 km+"
+      ]
+    },
+    "clouds": {
+      "value": "FEW 3000ft",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "FEW 3000ft"
+      ]
+    },
+    "temperature": {
+      "value": 28,
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        28
+      ]
+    },
+    "dewpoint": {
+      "value": 20,
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        20
+      ]
+    },
+    "qnh": {
+      "value": 1014,
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        1014
+      ]
+    }
+  },
+  "text": "Haifa airport information Romeo. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 320 degrees. 9 or knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds view 3000 feet. Temperature 28, dew point 20. QNH. 1014 millibars. For clearance and startup contact, high for clearance, 121. 80. End of information, Romeo.",
+  "loops": 3,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 9,
+  "conflicts": [],
+  "metar": {
+    "raw": "METAR LLHA 231450Z AUTO 30008KT 9999 FEW030 28/20 Q1014",
+    "time": "2026-09-23T14:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1014,
+        "agree": true
+      },
+      "temperature": {
+        "metar": 28,
+        "agree": true
+      },
+      "dewpoint": {
+        "metar": 20,
+        "agree": true
+      },
+      "wind": {
+        "metar": "300/8kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "FEW 3000ft",
+        "agree": true
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": []
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport, information Romeo. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 9 or knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds view 3,000 feet, temperature 28, dew point 20, QNH 1014 millibars, for clearance and start-up contact high for clearance 121, 80, end of information Romeo.",
+      "confidence": 0.774
+    },
+    {
+      "text": "Haifa airport information Romeo. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 9 or knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds view 3000 feet. Temperature 28 dew point 20. QNH. 1014 millibars. For clearance and startup contact, high for clearance, 121.80. End of information Romeo.",
+      "confidence": 0.743
+    },
+    {
+      "text": "Haifa airport information Romeo. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 320 degrees. 9 or knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds view 3000 feet. Temperature 28, dew point 20. QNH. 1014 millibars. For clearance and startup contact, high for clearance, 121. 80. End of information, Romeo.",
+      "confidence": 0.778
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-23T14:53:47Z",
+  "timing": {
+    "heard_at": "2026-09-23T15:01:34Z",
+    "first_heard_at": "2026-09-23T14:53:47Z",
+    "atis_issued_at": "2026-09-23T14:50:00Z",
+    "atis_age_min_when_heard": 12,
+    "published_at": "2026-09-23T15:02:20Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-23T15:16:34Z"
+  },
+  "missing_required": [
+    "wind"
+  ]
+}

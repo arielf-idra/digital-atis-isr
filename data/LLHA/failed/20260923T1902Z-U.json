@@ -1,0 +1,148 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-23T19:02:15Z",
+  "letter": "U",
+  "fields": {
+    "letter": {
+      "value": "U",
+      "votes": 2,
+      "of": 2,
+      "status": "confirmed",
+      "readings": [
+        "U"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "1750",
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        "1750"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        "right"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        "10 km+"
+      ]
+    },
+    "clouds": {
+      "value": "SCT 3200ft",
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        "SCT 3200ft"
+      ]
+    },
+    "temperature": {
+      "value": 27,
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        27
+      ]
+    },
+    "dewpoint": {
+      "value": 19,
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        19
+      ]
+    },
+    "qnh": {
+      "value": 1015,
+      "votes": 1,
+      "of": 1,
+      "status": "single",
+      "readings": [
+        1015
+      ]
+    }
+  },
+  "text": "Haifa airport information uniform. Valid from 1750 UTC. Runway in use treat 3. Right hand circuit. Wind touchdown zone. Treat 20 degrees 5 knots. Visibility 10 kilometers or more. Clouds scattered 3,200 feet, temperature 27, dew point 1 niner, QNH 1015 millibars, for clearance and startup contact high for clearance 121, 80, end of information uniform.",
+  "loops": 1,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 1,
+  "conflicts": [],
+  "metar": {
+    "raw": "METAR LLHA 231750Z AUTO 33007KT 9999 SCT032 27/19 Q1015",
+    "time": "2026-09-23T17:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1015,
+        "agree": true
+      },
+      "temperature": {
+        "metar": 27,
+        "agree": true
+      },
+      "dewpoint": {
+        "metar": 19,
+        "agree": true
+      },
+      "wind": {
+        "metar": "330/7kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "SCT 3200ft",
+        "agree": true
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": []
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport information uniform. Valid from 1750 UTC. Runway in use treat 3. Right hand circuit. Wind touchdown zone. Treat 20 degrees 5 knots. Visibility 10 kilometers or more. Clouds scattered 3,200 feet, temperature 27, dew point 1 niner, QNH 1015 millibars, for clearance and startup contact high for clearance 121, 80, end of information uniform.",
+      "confidence": 0.764
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-23T17:58:28Z",
+  "timing": {
+    "heard_at": "2026-09-23T19:02:15Z",
+    "first_heard_at": "2026-09-23T17:58:28Z",
+    "atis_issued_at": "2026-09-23T17:50:00Z",
+    "atis_age_min_when_heard": 72,
+    "published_at": "2026-09-23T19:02:35Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-23T19:17:15Z"
+  },
+  "missing_required": [
+    "runway",
+    "wind"
+  ]
+}

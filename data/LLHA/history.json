@@ -1,0 +1,583 @@
+[
+  {
+    "letter": "X",
+    "time": "1750",
+    "first_seen": "2026-09-26T17:54:47Z",
+    "text": "Haifa airport information X-ray. Valid from 1750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 4 knots. Visibility 10 kilometers or more. Clouds view 3500 feet. Temperature 26 dew point 17. QNH 1013 millibars. For clearance and startup contact high for clearance 121.80. End of information X-ray.",
+    "quality": "good"
+  },
+  {
+    "letter": "W",
+    "time": "1650",
+    "first_seen": "2026-09-26T16:58:31Z",
+    "text": "Haifa airport information whiskey. Valid from 1650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees. 6 knots. Varying between 280 and 350 degrees. Visibility 10 kilometers or more. Cloud view 3,400 feet. Temperature 26, dew point one eight. QNH, one zero one three millibars. For clearance and start up contact high for clearance one two one decimal eight zero. End of information Whiskey.",
+    "quality": "partial"
+  },
+  {
+    "letter": "V",
+    "time": "1550",
+    "first_seen": "2026-09-26T15:59:45Z",
+    "text": "Haifa airport information Victor. Valid from 1550 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees 6 knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds view 3400 feet. Temperature 26 dew point 18. QNH 1015 hectopascals. for clearance and startup contact high for clearance 121 decimal 8-0. End of information Victor.",
+    "quality": "partial"
+  },
+  {
+    "letter": "U",
+    "time": "1450",
+    "first_seen": "2026-09-26T14:55:25Z",
+    "text": "Haifa airport information uniform. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 310 degrees 6 knots. Visibility 10 kilometers or more. Cloud view 3,400 feet, temperature 27, dew point one eight, QNH, one zero one two millibars. For clearance and startup contact high for clearance one two one decimal eight zero. End of information uniform.",
+    "quality": "partial"
+  },
+  {
+    "letter": "T",
+    "time": "1350",
+    "first_seen": "2026-09-26T13:52:15Z",
+    "text": "Haifa airport information Tango. Valid from 1350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees 9 knots. Visibility 10 kilometers or more. Clouds view 3,500 feet, temperature 27, dew point one seven, QNH, one zero one two millibars. For clearance and start up contact high for clearance one two one decimal eight zero. End of information Tango.",
+    "quality": "good"
+  },
+  {
+    "letter": "S",
+    "time": "1250",
+    "first_seen": "2026-09-26T12:53:40Z",
+    "text": "Haifa airport information Sierra. Valid from 1250 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 3300 degrees. 11 knots. Varying between 2900 and 3500 degrees. Visibility 10 kilometers or more. Clouds scattered 3400 feet. Temperature 27 dew point 18. QNH 1 0 1 2 millibars for clearance and startup contact high for clearance 1 2 1 decimal 8 0 and of information Sierra",
+    "quality": "partial"
+  },
+  {
+    "letter": "R",
+    "time": "1150",
+    "first_seen": "2026-09-26T11:52:30Z",
+    "text": "Haifa airport information Romeo. Valid from 1150 UTC. Runway in use tree tree. Right hand circuit. Wind touchdown zone. Tree tree 0 degrees. 9 knots. Visibility 10 kilometers or more. Clouds scattered 3,400 feet. Temperature 28, dew point 18. QNH 1013 millibars. For clearance and startup contact high for clearance 121.80. Enter the information room now.",
+    "quality": "partial"
+  },
+  {
+    "letter": "Q",
+    "time": "1050",
+    "first_seen": "2026-09-26T10:56:21Z",
+    "text": "Haifa airport information Quebec. Ballad from 1050 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 10 knots. Visibility 10 kilometers or more. Cloud view 3500 feet. Temperature 27 dew point 17. QNH 1013 millibars. For clearance and startup contact high for clearance 121.80. Enter the information Quebec.",
+    "quality": "good"
+  },
+  {
+    "letter": "P",
+    "time": "0950",
+    "first_seen": "2026-09-26T09:59:53Z",
+    "text": "Haifa airport information Papa. Valid from 0950 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 310 degrees 9 knots. Varying between 270 and 340 degrees. Visibility 10 kilometers or more. Cloud view 3,500 feet, temperature 28, dew point 18, QNH, 101 3 millibars. For clearance and start-up contact high for clearance 121 decimal 80. End of information Papa.",
+    "quality": "partial"
+  },
+  {
+    "letter": "O",
+    "time": "0850",
+    "first_seen": "2026-09-26T08:58:25Z",
+    "text": "Haifa airport information Oscar. Valid from 0850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 7 knots. Varying between 300 and 360 degrees. Visibility 10 kilometers or more. Cloud view 3500 feet. Temperature 28 dew point 18. QNH 1015 hectopascals. for clearance and startup contact high for clearance 121 decimal 8-0. End of information Oscar.",
+    "quality": "partial"
+  },
+  {
+    "letter": "N",
+    "time": "0750",
+    "first_seen": "2026-09-26T07:55:35Z",
+    "text": "Haifa airport, information November. Valid from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 300 degrees. 6 knots. That's varying between 260 and 350 degrees, visibility 10 kilometers or more, clouds scattered 3,400 feet, temperature 27, dew point 18, QNH, 1014 millibars, for clearance and start-up contact high for clearance 121 decimal 80, end of information November.",
+    "quality": "good"
+  },
+  {
+    "letter": "M",
+    "time": "0650",
+    "first_seen": "2026-09-26T07:01:55Z",
+    "text": "Haifa airport information mic. Valid from 0650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 310 degrees 6 knots. Varying between 270 and 350 degrees. Visibility 10 kilometers or more. Clouds scattered 3500 feet. Temperature 27 dew point 18. QNH 1015 hectopascals. for clearance and startup contact high for clearance 121.80. Enter the information mike.",
+    "quality": "partial"
+  },
+  {
+    "letter": "L",
+    "time": "0550",
+    "first_seen": "2026-09-26T05:58:44Z",
+    "text": "Haifa airport, information LEMAP. Valid from 0550 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 3500 degrees, 5 knots. Visibility 10 kilometers or more. Clouds scattered 3500 feet. Temperature 26 dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. Enter the information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "K",
+    "time": "0540",
+    "first_seen": "2026-09-26T05:45:45Z",
+    "text": "Haifa airport information Kilo. Valid from 0540 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Variable 2 knots. Visibility 10 kilometers or more. Cloud Brocon treat 1500 feet. Temperature 24 dew point 18. QNH 1013 millibars. For clearance and startup contact high for clearance 121.80, enter the information below.",
+    "quality": "good"
+  },
+  {
+    "letter": "J",
+    "time": "0450",
+    "first_seen": "2026-09-26T04:59:55Z",
+    "text": "Haifa airport, information joules yet. Valid from 0450 UTC. Runway in use 15. Left hand circuit. Wind touchdown zone, variable, 2 knots. Visibility 10 kilometers or more. Cloud broke on 3,500 feet. Temperature 24, dew point 18. QNH 1013 millibars. For clearance and startup contact high for clearance 121 decimal 8-0. Enter the information dual yet.",
+    "quality": "good"
+  },
+  {
+    "letter": "I",
+    "time": "0350",
+    "first_seen": "2026-09-26T04:44:23Z",
+    "text": "Haifa airport information India. Valid from 0350 UTC. Runway in use 15. Left hand circuit. Wind touchdown zone. Variable. Tree knots. Visibility 10 kilometers or more. Cloud view 3,000 feet, temperature 2 tree, dew point 1 7, QNH 1 0 1 3 millibars, for clearance and start up contact high for clearance 1 2 1 decimal 8 0, end of information India.",
+    "quality": "partial"
+  },
+  {
+    "letter": "H",
+    "time": "0350",
+    "first_seen": "2026-09-26T03:55:35Z",
+    "text": "Thought it's not available. Thought it's not available. Thought it's not available. Thought Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Haifa, Airport, Information Hotel. Valid from 0350 UTC. Runway and use treat tree, right hand circuit. Wind touchdown zone, variable, tree knots. Visibility one, zero kilometers or more. Cloud view, 3,000 feet. Temperature to tree. Dew point one seven.",
+    "quality": "partial"
+  },
+  {
+    "letter": "G",
+    "time": null,
+    "first_seen": "2026-09-25T17:02:47Z",
+    "text": "8QNH 1014 millibars. For clearance and startup contact Haifa clearance 121 decimal 8-0. End of information Golf. Haifa airport infra. Audits not available. Audits not available. But it's not available. But it's not available. But it's not available. But it's not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available, Audits not available, Audits not available, Audits not available, Audits not available. Audits not available.",
+    "quality": "partial"
+  },
+  {
+    "letter": "G",
+    "time": "1550",
+    "first_seen": "2026-09-25T15:57:08Z",
+    "text": "Haifa airport information Gulf. Valid from 1550 UTC. Runway in use tree tree. Right hand circuit. Wind touchdown zone. Tree tree 0 degrees. 10 knots. Kevo K. Temperature 27 dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. End of information. Golf.",
+    "quality": "partial"
+  },
+  {
+    "letter": "F",
+    "time": "1450",
+    "first_seen": "2026-09-25T14:57:44Z",
+    "text": "Haifa airport information Foxtrot. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 340 degrees. 11 knots. Kevo K. temperature 27, dew point 17, QNH 1014 millibars, for clearance and startup contact high for clearance 121 decimal 80, enter the information foxtrot.",
+    "quality": "good"
+  },
+  {
+    "letter": "E",
+    "time": "1350",
+    "first_seen": "2026-09-25T13:53:21Z",
+    "text": "Haifa airport information echo. Valid from 1350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 3300 degrees. 12 knots. Kevo K. Temperature 28, dew point 17. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. End of information echo.",
+    "quality": "partial"
+  },
+  {
+    "letter": "D",
+    "time": "1250",
+    "first_seen": "2026-09-25T12:59:00Z",
+    "text": "Haifa airport information Delta. Valid from 1250 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 33.0 degrees. 10 knots. Kevo K. Temperature 28 dew point 17. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80, enter the information Delta.",
+    "quality": "good"
+  },
+  {
+    "letter": "C",
+    "time": "1150",
+    "first_seen": "2026-09-25T11:59:41Z",
+    "text": "Haifa airport information Charlie. Valid from 1150 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 10 knots. Kevo K. Temperature 28 dew point 17. QNH 1014 millibars. for clearance and startup contact high for clearance 121.80. Enter the information, Charlie.",
+    "quality": "good"
+  },
+  {
+    "letter": "B",
+    "time": "1050",
+    "first_seen": "2026-09-25T10:57:53Z",
+    "text": "Haifa airport information Bravo. Ballad from 1050 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 340 degrees. 11 knots. Kevo K. Temperature 28 dew point 17. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80, enter the information brotto.",
+    "quality": "good"
+  },
+  {
+    "letter": "A",
+    "time": "0950",
+    "first_seen": "2026-09-25T09:54:21Z",
+    "text": "Haifa airport, information Alpha. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 3300 degrees. 11 knots. Kevo K. Temperature 28, dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80, enter the information alpha.",
+    "quality": "good"
+  },
+  {
+    "letter": "Z",
+    "time": null,
+    "first_seen": "2026-09-25T09:51:46Z",
+    "text": "Haifa airport, information Zulu. Valid from 0850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 10 knots. Varying between trees 00 and 010 degrees. Visibility 10 kilometers or more. Cloud View 3,500 feet, temperature 28, dew point one eight, QNH, one zero one five millibars for clearance and start up contact high for clearance one two one decimal eight zero, end of information zero.",
+    "quality": "partial"
+  },
+  {
+    "letter": "Z",
+    "time": "0850",
+    "first_seen": "2026-09-25T08:55:14Z",
+    "text": "Haifa airport information Zulu. Ballad from 0850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 10 knots. Varying between tree 00 and 010 degrees. Visibility 10 kilometers or more. Cloud few 3500 feet. Temperature 28, dew point 18. QNH 1015 hectopascals. for clearance and startup contact high for clearance 121.80. End of information Zulu.",
+    "quality": "partial"
+  },
+  {
+    "letter": "Y",
+    "time": null,
+    "first_seen": "2026-09-25T08:52:28Z",
+    "text": "Haifa airport information Yankee. Valid from 06750 UTC. Runway in use 33. Right hand circuit. Wind touchdown on 240 degrees 8 knots. Clearing between D-0-0 and B-0-1-0 degrees. Visibility 1, pro-conditor or more. Cloud future, 2000 feet. Temperature 28, dew point 1-9. QNH 1015 millibars. Clearance and startup contact high for clear and 1-1-demo-80. End information and key.",
+    "quality": "partial"
+  },
+  {
+    "letter": "Y",
+    "time": "0750",
+    "first_seen": "2026-09-25T07:54:34Z",
+    "text": "Haifa airport information Yankee. Bow from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 340 degrees 8 knots. Varying between tree 0-0 and 0-1-0 degrees. Visibility 1-0 kilometers or more. Clouds view 3,000 tree hud feet. Temperature 2-8. Dew point 1-9-er. QNH 1-0-1-5 millibars. For clearance and start-up contact high for clearance 1-1 decimal 8-0. End of information Yankee.",
+    "quality": "good"
+  },
+  {
+    "letter": "X",
+    "time": "0650",
+    "first_seen": "2026-09-25T06:53:39Z",
+    "text": "Haifa airport, information XRAD. Out from 0650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 3500 degrees. Near knots. Visibility 10 kilometers or more. Outscatter 3800 feet. Temperature 28, dew point 19. QNH 1015 millibars. For Crenson, start up contact of Crenson 121.80 and have information x-ray.",
+    "quality": "partial"
+  },
+  {
+    "letter": "W",
+    "time": "0550",
+    "first_seen": "2026-09-25T05:55:00Z",
+    "text": "Haifa airport, information Whiskey, Belladonna, 0550 UEC. Runway in use 33. Right hand circuit. Wind Touchdown zone, 340 degrees 9 knots. Visibility 10 kilometers or more. Clouds category 1000 feet. Temperature 27, dew point 18. QNH 1014 milliars. For clearance and DART contact Hive Clear at 1 to 1 decimal 8-0. End of information Whiskey.",
+    "quality": "good"
+  },
+  {
+    "letter": "V",
+    "time": "0450",
+    "first_seen": "2026-09-25T04:57:04Z",
+    "text": "Haifa airport, information Victor. Ballad from 0450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 3300 degrees. 6 knots. Visibility 10 kilometers or more. Clouds scattered 3200 feet. Temperature 27. Dew point 19. QNH 1014 millimers. For clearance in startup contact, high for clearance 121.80. End of information, Victor.",
+    "quality": "partial"
+  },
+  {
+    "letter": "U",
+    "time": "0350",
+    "first_seen": "2026-09-25T03:56:21Z",
+    "text": "Haifa airport information uniform. Valid from 0350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 340 degrees 6 knots. Visibility 10 kilometers or more. Clouds scattered 3000 feet. Temperature 26 dew point 19. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. Enter the information uniform.",
+    "quality": "good"
+  },
+  {
+    "letter": "T",
+    "time": "0300",
+    "first_seen": "2026-09-25T03:07:06Z",
+    "text": "Haifa airport information Tango. Valid from 0300 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 40 degrees 5 knots. Visibility 10 kilometers or more. Clouds scattered 3000 feet. Temperature 26 dew point 19. QNH 1014 millibars. For clearance and startup contact high for clearance 121 decimal 80. End of information Tango.",
+    "quality": "partial"
+  },
+  {
+    "letter": "S",
+    "time": "1850",
+    "first_seen": "2026-09-24T19:02:37Z",
+    "text": "Haifa airport, information Sierra. Valid from 1850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 340 degrees 8 knots. Visibility 10 kilometers or more. Clouds scattered 3100 feet. Temperature 27 dew point 19. QNH 1015 millibars. For clearance and startup contact high for clearance 121 decimal 80. End of information Sierra.",
+    "quality": "good"
+  },
+  {
+    "letter": "R",
+    "time": "1750",
+    "first_seen": "2026-09-24T17:59:28Z",
+    "text": "Haifa airport, information Romeo. Ballad from 1750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 340 degrees, 10 knots. Visibility 10 kilometers or more. Clouds scattered 3100 feet. Temperature 27 dew point 19. QNH 1015 millibars. For clearance and startup contact high for clearance 121.80. End of information Romeo.",
+    "quality": "partial"
+  },
+  {
+    "letter": "Q",
+    "time": null,
+    "first_seen": "2026-09-24T17:56:54Z",
+    "text": "Haifa airport information Québec. Valid from 1650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 3500 degrees. 10 knots. Visibility 10 kilometers or more. Clouds scattered 3000 feet. Temperature 27 dew point 19. QNH 1015 millibars. For clearance and startup contact high for clearance 121 decimal 8-0. End of information Québec.",
+    "quality": "partial"
+  },
+  {
+    "letter": "Q",
+    "time": "1650",
+    "first_seen": "2026-09-24T16:57:54Z",
+    "text": "Haifa airport, information Quebec. Valid from 1650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 50 degrees. 10 knots. Visibility 10 kilometers or more. Clouds scattered 3000 feet. Temperature 27. Dew point 19. QNH 1015 millibars. For clearance and startup contact high for clearance 121.80. Enter the information Quebec.",
+    "quality": "partial"
+  },
+  {
+    "letter": "P",
+    "time": "1550",
+    "first_seen": "2026-09-24T15:58:43Z",
+    "text": "Haifa airport information Papa. Valid from 1550 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 340 degrees. 11 knots. Visibility 10 kilometers or more. Clouds scattered 2,800 feet, temperature 27, dew point 21, QNH 1015 millibars, for clearance and start-up contact high for clearance 121 decimal 80, end of information papa.",
+    "quality": "partial"
+  },
+  {
+    "letter": "O",
+    "time": "1450",
+    "first_seen": "2026-09-24T14:54:40Z",
+    "text": "Haifa airport information Oscar. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 40 degrees. 11 knots. Visibility 10 kilometers or more. Clouds scattered 3000 feet. Temperature 28, dew point 20. QNH 1015 millibars. For clearance and startup contact, high for clearance 121.80. Enter the information Oscar.",
+    "quality": "good"
+  },
+  {
+    "letter": "N",
+    "time": "1350",
+    "first_seen": "2026-09-24T13:58:17Z",
+    "text": "Haifa airport, information November. Valid from 1350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 30 degrees. 9 knots. Varying between 300 and 360 degrees. Visibility 10 kilometers or more. Clouds scattered 2800 feet. Temperature 28, dew point 20. QNH 1014 millibars for clearance and startup contact high for clearance 121 decimal 8-0. End of information November.",
+    "quality": "partial"
+  },
+  {
+    "letter": "M",
+    "time": "1250",
+    "first_seen": "2026-09-24T12:55:54Z",
+    "text": "Haifa airport, information mic. Ballad from 1250 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 30 degrees. 10 knots. Visibility 10 kilometers or more. Clouds scattered 2500 feet. Temperature 30. Dew point 19. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80. End of information, Mike.",
+    "quality": "partial"
+  },
+  {
+    "letter": "L",
+    "time": "1150",
+    "first_seen": "2026-09-24T11:54:33Z",
+    "text": "Haifa airport information LEMAP. Valid from 1150 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 310 degrees 8 knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds scattered 2800 feet. Temperature 30 dew point 21. QNH 1015 millibars. For clearance and startup contact high for clearance 121 decimal 8-0. End of information remap.",
+    "quality": "partial"
+  },
+  {
+    "letter": "J",
+    "time": "1050",
+    "first_seen": "2026-09-24T11:00:33Z",
+    "text": "Haifa airport, information dual yet. Ballad from 1050 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 30 degrees. 10 knots. Visibility 10 kilometers or more. Cloud few 4500 feet. Temperature 29er. Dew point 20. QNH 1015 millibars. Flocks of birds reported on final for clearance and startup contact high for clearance 121.80. End of information Joel, yet.",
+    "quality": "good"
+  },
+  {
+    "letter": "I",
+    "time": "0950",
+    "first_seen": "2026-09-24T09:53:55Z",
+    "text": "Haifa airport, information India. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 30 degrees. 10 knots. Visibility 10 kilometers or more. Clouds view 4,500 feet, temperature 2 niner, dew point 2 zero, QNH 1 0 1 5 millibars, flocks of birds reported on final for clearance and start-up contact high for clearance 1 2 1 decimal 8 zero, end of information India.",
+    "quality": "good"
+  },
+  {
+    "letter": "H",
+    "time": "0850",
+    "first_seen": "2026-09-24T08:59:59Z",
+    "text": "Haifa airport information hotel. Valid from 0850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 3300 degrees. 8 knots. Varying between 2900 and 010 degrees. Visibility 10 kilometers or more. Cloud few 4500 feet. Temperature 29er dew point 20. QNH 1016 millibars. Flocks of birds reported on final for clearance and startup contact high for clearance 121 decimal 8-0. End of information hotel.",
+    "quality": "partial"
+  },
+  {
+    "letter": "G",
+    "time": "0750",
+    "first_seen": "2026-09-24T08:46:53Z",
+    "text": "Haifa airport, information Gulf. Valid from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 6 knots. Varying between 280 and 360 degrees. Visibility 10 kilometers or more. Cloud few 4500 feet. Temperature 29er dew point 19. QNH 1015 hectopascals. H, 1016 millibars. Flocks of birds reported on final for clearance and startup contact high for clearance 121 decimal 8-0. End of information Golf.",
+    "quality": "partial"
+  },
+  {
+    "letter": "E",
+    "time": "0750",
+    "first_seen": "2026-09-24T08:44:18Z",
+    "text": "Haifa airport information echo. Valid from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees 6 knots. Varying between 280 and 360 degrees. Visibility 10 kilometers or more. Cloud few 4500 feet. Temperature 29er dew point 19. QNH 1015 hectopascals. for clearance and startup contact high for clearance 121.80. Flocks of birds reported on final. End of information echo.",
+    "quality": "partial"
+  },
+  {
+    "letter": "C",
+    "time": "0750",
+    "first_seen": "2026-09-24T08:03:57Z",
+    "text": "Haifa airport information Charlie. Valid from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees 6 knots. Varying between 280 and 360 degrees. Visibility 10 kilometers or more. Cloud view 4500 feet. Temperature 29er dew point 19. QNH 1015 hectopascals. NNH 1016 millibars. For clearance and start-up contact high for clearance 121. 80 flocks of birds reported on final. End of information, Charlie.",
+    "quality": "partial"
+  },
+  {
+    "letter": "B",
+    "time": "0750",
+    "first_seen": "2026-09-24T07:53:30Z",
+    "text": "Haifa airport information Bravo. Valid from 0750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 6 knots. Varying between 280 and 360 degrees. Visibility 10 kilometers or more. Cloud few 4500 feet. Temperature 29er dew point 19. QNH 1016 millibars. For clearance and startup contact high for clearance 12180. End of information Bravo.",
+    "quality": "good"
+  },
+  {
+    "letter": "A",
+    "time": "0650",
+    "first_seen": "2026-09-24T06:59:31Z",
+    "text": "Haifa airport information Alpha. Valid from 0650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. 3-4-0 degrees, 6 knots, visibility 1-0 km or more, cloud view 3,000 feet, temperature 2-8, dew point 1-8, QNH 1-0-1-6 millibars, for clearance and start up contact high for clearance 121, 80, end of information alpha.",
+    "quality": "partial"
+  },
+  {
+    "letter": "Z",
+    "time": "0550",
+    "first_seen": "2026-09-24T06:29:18Z",
+    "text": "Haifa airport information Zulu. Valid from 0550 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 010 degrees 4 knots. Visibility 10 kilometers or more. Cloud view 3,300 feet, temperature 26, dew point 1 niner, QNH 1016 millibars, for clearance and start-up contact high for clearance 121, 80, end of information Zulu.",
+    "quality": "partial"
+  },
+  {
+    "letter": "Y",
+    "time": "0550",
+    "first_seen": "2026-09-24T05:53:26Z",
+    "text": "Haifa airport information Yankee. Valid from 0550 UTC. Runway in use 15. Left hand circuit. Wind touchdown zone 170 degrees 5 knots. Visibility 10 kilometers or more. Cloud view 3,300 feet, temperature 26, dew point 1 niner, QNH 1016 millibars, for clearance and start up contact high for clearance 121, 80, end of information Yankee.",
+    "quality": "partial"
+  },
+  {
+    "letter": "X",
+    "time": "0450",
+    "first_seen": "2026-09-24T04:56:58Z",
+    "text": "Haifa airport information X-ray. Valid from 0450 UTC. Runway in use 15. Left hand circuit. Wind touchdown zone. Variable. Tree knots. Visibility 10 kilometers or more. Cloud view 3300 feet. Temperature 24. Dew point 19. QNH 1015 millibars. For clearance and startup contact, high for clearance, 121, 80, end of information x-ray.",
+    "quality": "partial"
+  },
+  {
+    "letter": "W",
+    "time": "0400",
+    "first_seen": "2026-09-24T04:10:48Z",
+    "text": "Haifa airport information whiskey. Valid from 0400 UTC. Runway in use 15. Left hand circuit. Wind touchdown zone. Variable 2 knots. Visibility 10 kilometers or more. Cloud view 3,300 feet, temperature 2 tree, dew point one eight, QNH one zero one five millibars for clearance and start up contact high for clearance one hundred and twenty one eighty. End of information Whiskey.",
+    "quality": "good"
+  },
+  {
+    "letter": "V",
+    "time": "0400",
+    "first_seen": "2026-09-24T04:05:36Z",
+    "text": "Haifa airport information Victor. Valid from 0400 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone variable 2 knots. Visibility 10 kilometers or more. Cloud view 3300 feet. Temperature 23 dew point 18. QNH 1015 millibars. For clearance and startup contact, high for clearance, 121, 80. End of information, Victor.",
+    "quality": "partial"
+  },
+  {
+    "letter": "U",
+    "time": "1750",
+    "first_seen": "2026-09-23T17:58:28Z",
+    "text": "Haifa airport information uniform. Valid from 1750 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees 5 knots. Visibility 10 kilometers or more. Clouds scattered 3,200 feet, temperature 27, dew point 1 niner, QNH, 1015 millibars, for clearance and startup contact high for clearance 121, 80, end of information uniform.",
+    "quality": "good"
+  },
+  {
+    "letter": "T",
+    "time": "1650",
+    "first_seen": "2026-09-23T16:57:35Z",
+    "text": "Haifa airport, information Tango. Valid from 1650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 3300 degrees. 5 knots. Varying between 270 and 350 degrees. Visibility 10 kilometers or more. Clouds scattered 3300 feet. Temperature 27 dew point 20. QNH 1015 millibars for clearance and startup contact high for clearance 120-180. End of information Tango.",
+    "quality": "partial"
+  },
+  {
+    "letter": "S",
+    "time": "1550",
+    "first_seen": "2026-09-23T15:59:09Z",
+    "text": "Haifa airport information Sierra. Valid from 1550 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees 8 knots. Visibility 10 kilometers or more. Clouds scattered 3100 feet. Temperature 27 dew point 20. QNH 1015 millibars. For clearance and startup contact, high for clearance, 121, 80, end of information Sierra.",
+    "quality": "partial"
+  },
+  {
+    "letter": "R",
+    "time": "1450",
+    "first_seen": "2026-09-23T14:53:47Z",
+    "text": "Haifa airport information Romeo. Valid from 1450 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 9 knots. Varying between 280 and 340 degrees. Visibility 10 kilometers or more. Clouds view 3000 feet. Temperature 28, dew point 20. QNH. 1014 millibars. For clearance and startup contact, high for clearance, 121, 80. End of information, Romeo.",
+    "quality": "good"
+  },
+  {
+    "letter": "Q",
+    "time": "1350",
+    "first_seen": "2026-09-23T13:54:55Z",
+    "text": "Haifa airport information Quebec. Valid from 1350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees 8 knots. Visibility 10 kilometers or more. Cloud view 3,500 feet, temperature 2 niner, dew point 1 niner, QNH 1014 millibars, for clearance and start up contact high for clearance 121, 80, end of information Quebec.",
+    "quality": "good"
+  },
+  {
+    "letter": "P",
+    "time": "1250",
+    "first_seen": "2026-09-23T12:53:03Z",
+    "text": "Haifa airport information Papa. Valid from 1250 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Three 10 degrees. 10 knots. Visibility 10 kilometers or more. Clouds view 3,500 feet, temperature 2 niner, dew point 2 zero, QNH 1014 millibars, for clearance and start up contact high for clearance 121, 80, end of information pop up.",
+    "quality": "partial"
+  },
+  {
+    "letter": "O",
+    "time": "1150",
+    "first_seen": "2026-09-23T11:58:51Z",
+    "text": "Haifa airport, information Oscar. Valid from 1150 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 11 knots. Visibility 10 kilometers or more. Clouds view 3,500 feet. Temperature tree zero. Dew point one niner. QNH 1014 millibars. For clearance and start-up contact high for clearance 121. 80. End of information Oscar.",
+    "quality": "good"
+  },
+  {
+    "letter": "N",
+    "time": "1050",
+    "first_seen": "2026-09-23T11:26:37Z",
+    "text": "Haifa airport, information November. Valid from 1050 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees 11 knots. Varying between 260 and tree 30 degrees. Visibility 10 kilometers or more. Cloud view 4,000 feet, temperature 3-0, dew point 1-8, QNH, 1-0-1-5 millibars, for clearance and start-up contact high for clearance 121, 80, end of information November.",
+    "quality": "good"
+  },
+  {
+    "letter": "M",
+    "time": "1050",
+    "first_seen": "2026-09-23T10:58:40Z",
+    "text": "Haifa airport, information mic. Valid from 1050 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 20 degrees. 11 knots. Varying between 260 and tree 30 degrees. Visibility 10 kilometers or more. Cloud view 4000 feet. Temperature 30. Dew point 18. QNH 1015 hectopascals. 1015 millibars for clearance and start-up contact high for clearance 121, 80 flocks of birds reported in the inviscinity of the airport. End of information Mike.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": null,
+    "first_seen": "2026-09-23T10:56:05Z",
+    "text": "Haifa airport, information LEMAP. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees 9 knots. Visibility 10 kilometers or more. Cloud view 4,000 feet, temperature tree zero, dew point one eight, QNH, one zero one five millibars, for clearance and start-up contact high for clearance one hundred and twenty one. Eighty swocks of birds reported in the inviscidity of the airport, end of information remap.",
+    "quality": "partial"
+  },
+  {
+    "letter": "L",
+    "time": "0950",
+    "first_seen": "2026-09-23T10:53:27Z",
+    "text": "Haifa airport, information LEMAP. Ballad from 0950 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees. 9 knots. Visibility 10 kilometers or more. Cloud few 4000 feet. Temperature 30. Dew point 18. QNH 1015 millibars. For clearance and startup contact high for clearance 121. 80 flocks of birds reported in the inviscidity of the airport. Enter the information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": null,
+    "first_seen": "2026-09-23T10:48:18Z",
+    "text": "Haifa airport, information LEMAP. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees, 9 knots. Visibility 10 kilometers or more. Clouds view 4,000 feet, temperature tree zero, dew point one eight, QNH, one zero one five millibars, for clearance and start up contact high for clearance one hundred and twenty one. Eighty flocks of birds reported in the inviscidity of the airport, end of information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": "0950",
+    "first_seen": "2026-09-23T10:45:41Z",
+    "text": "Haifa airport information LEMAP. Ballad from 0950 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 310 degrees 9 knots. Visibility 10 kilometers or more. Clouds view 4,000 feet, temperature tree zero, dew point one eight, QNH one zero one five millibars, for clearance and start up contact high for clearance one hundred and twenty one, eighty flocks of birds reported in the vicinity of the airport, end of information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": null,
+    "first_seen": "2026-09-23T10:43:06Z",
+    "text": "Haifa airport, information LEMAP. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees. 9 knots. Visibility 10 kilometers or more. Cloud view 4000 feet. Temperature 30. Dew point 18. QNH 1015 millibars. For clearance and startup contact high for clearance 121. 80 flocks of birds reported in the inviscidity of the airport. Enter the information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": "0950",
+    "first_seen": "2026-09-23T10:40:28Z",
+    "text": "Haifa airport, information LEMAP. Ballad from 0950 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees, 9 knots. Visibility 10 kilometers or more. Cloud view 4,000 feet, temperature tree zero, dew point one eight, QNH, one zero one five millibars, for clearance and start up contact high for clearance one hundred and twenty one. Eighty flocks of birds reported in the inviscidity of the airport, enter the information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": null,
+    "first_seen": "2026-09-23T10:37:51Z",
+    "text": "Haifa airport, information LEMAP. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees. 9 knots. Visibility 10 kilometers or more. Clouds view 4,000 feet, temperature tree zero, dew point one eight, QNH, one zero one five millibars. For clearance and start up contact high for clearance one hundred and twenty one. Eighty flocks of birds reported in the inviscidity of the airport. End of information. Lee map.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": "0950",
+    "first_seen": "2026-09-23T10:35:17Z",
+    "text": "Haifa airport, information LEMAP. Ballad from 0950 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees 9 knots. Visibility 10 kilometers or more. Cloud few 4000 feet. Temperature 30. Dew point 18. QNH 1015 millibars. For clearance and startup contact high for clearance 121. 80 flocks of birds reported in the inviscidity of the airport. End of information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": null,
+    "first_seen": "2026-09-23T10:25:21Z",
+    "text": "Haifa airport, information LEMAP. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees, 9 knots. Visibility 10 kilometers or more. Cloud view 4000 feet. Temperature 30. Dew point 18. QNH 1015 millibars. For clearance and startup contact high for clearance 121. 80 flocks of birds reported in the inviscidity of the airport. End of information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": "0950",
+    "first_seen": "2026-09-23T10:22:43Z",
+    "text": "Haifa airport, information LEMAP. Ballad from 0950 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees, 9 knots. Visibility 10 kilometers or more. Cloud few 4000 feet. Temperature 30. Dew point 18. QNH 1015 millibars. For clearance and startup contact high for clearance 121. 80 flocks of birds reported in the vicinity of the airport. Enter the information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": null,
+    "first_seen": "2026-09-23T10:20:08Z",
+    "text": "Haifa airport, information Lima. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees 9 knots. Visibility 10 kilometers or more. Clouds view 4000 feet. Temperature tree zero. Dew point one eight. QNH 1015 millibars. For clearance and startup contact high for clearance 121. Eighty flocks of birds reported in the inviscidity of the airport. Enter the information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": "0950",
+    "first_seen": "2026-09-23T10:12:22Z",
+    "text": "Haifa airport information LEMAP. Ballad from 0950 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 310 degrees 9 knots. Visibility 10 kilometers or more. Cloud view 4,000 feet, temperature tree zero, dew point one eight, QNH, one zero one five millibars, for clearance and start up contact high for clearance one hundred and twenty one, eighty flocks of birds reported in the vicinity of the airport, end of information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": null,
+    "first_seen": "2026-09-23T10:09:45Z",
+    "text": "Haifa airport, information LEMAP. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees 9 knots. Visibility 10 kilometers or more. Cloud view 4,000 feet, temperature tree zero, dew point one eight, QNH, one zero one five millibars, for clearance and start up contact high for clearance one hundred and twenty one. Eighty flocks of birds reported in the inviscidity of the airport. End of information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": "0950",
+    "first_seen": "2026-09-23T10:04:32Z",
+    "text": "Haifa airport, information LEMAP. Valid from 0950 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 310 degrees, 9 knots. Visibility 10 kilometers or more. Cloud few 4000 feet. Temperature 30. Dew point 18. QNH 1015 millibars. For clearance and startup contact high for clearance 121. 80 swocks of birds reported in the inviscidity of the airport. End of information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "L",
+    "time": null,
+    "first_seen": "2026-09-23T09:59:20Z",
+    "text": "Haifa airport information LEMAP. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 310 degrees 9 knots. Visibility 10 kilometers or more. Cloud view 4,000 feet, temperature tree zero, dew point one eight, QNH, one zero one five millibars, for clearance and start up contact high for clearance one hundred and twenty one. Eighty flocks of birds reported in the vicinity of the airport, enter the information remap.",
+    "quality": "good"
+  },
+  {
+    "letter": "K",
+    "time": "0850",
+    "first_seen": "2026-09-23T09:38:41Z",
+    "text": "Haifa airport information Kilo. Valid from 0850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 280 degrees 8 knots. Varying between 250 and 320 degrees. Visibility 10 kilometers or more. Clouds scattered 3,700 feet. Temperature 29er dew point 19. QNH 1015 millibars for clearance and start-up contact high for clearance 121. 80 swags of birds reported in the inviscidity of the airport. End of information Kilo.",
+    "quality": "partial"
+  },
+  {
+    "letter": "J",
+    "time": "0850",
+    "first_seen": "2026-09-23T09:22:17Z",
+    "text": "Haifa airport, information dual yet. Valid from 0850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 280 degrees 8 knots. Varying between 250 and 320 degrees. Visibility 10 kilometers or more. Clouds scattered 3,700 feet. Temperature 29, dew point 19. QNH 1015 millibars for clearance and startup contact high for clearance 121 decimal 8-0. Enter the information dual yet.",
+    "quality": "partial"
+  },
+  {
+    "letter": "G",
+    "time": "0650",
+    "first_seen": "2026-09-23T06:51:33Z",
+    "text": "Haifa airport information Gulf. Valid from 0650 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 290 degrees. 6 knots. Varying between 270 and 320 degrees. Visibility 10 kilometers or more. Cloud few 3700 feet. Temperature 29er dew point 18. QNH 1015 hectopascals. 1H, 1 0 1 5 millibars. For clearance and startup contact high for clearance 1 2 1 decimal 8 0. End of information Golf.",
+    "quality": "partial"
+  }
+]

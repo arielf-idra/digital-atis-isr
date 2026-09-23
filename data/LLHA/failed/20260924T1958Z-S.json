@@ -1,0 +1,138 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-24T19:58:56Z",
+  "letter": "S",
+  "fields": {
+    "letter": {
+      "value": "S",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "S"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "1850",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "1850"
+      ]
+    },
+    "runway": {
+      "value": "33",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "33"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "wind": {
+      "value": "340/8kt",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "340/8kt"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "10 km+"
+      ]
+    }
+  },
+  "text": "Haifa airport information Sierra. Valid from 1850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 340 degrees 8 knots. Visibility 10 kilometers or more. Clearance and startup contact high for clearance 121 decimal 80. End of information Sierra.",
+  "loops": 3,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 6,
+  "conflicts": [],
+  "metar": {
+    "raw": "METAR LLHA 241850Z AUTO 34009KT 9999 SCT031 27/19 Q1015",
+    "time": "2026-09-24T18:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1015,
+        "agree": null
+      },
+      "temperature": {
+        "metar": 27,
+        "agree": null
+      },
+      "dewpoint": {
+        "metar": 19,
+        "agree": null
+      },
+      "wind": {
+        "metar": "340/9kt",
+        "agree": true
+      },
+      "clouds": {
+        "metar": "SCT 3100ft",
+        "agree": null
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": []
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport, information Sierra. Valid from 1850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 340 degrees 8 knots. Visibility 10 kilometers or more. and start-up contact high for clearance 121.80. End of information Sierra.",
+      "confidence": 0.717
+    },
+    {
+      "text": "Haifa airport information Sierra. Valid from 1850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 340 degrees 8 knots. Visibility 10 kilometers or more. Clearance and startup contact high for clearance 121 decimal 80. End of information Sierra.",
+      "confidence": 0.736
+    },
+    {
+      "text": "Haifa airport, information Sierra. Valid from 1850 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 40 degrees 8 knots. Visibility 10 kilometers or more. Clearance and startup contact high for clearance 121.80. End of information Sierra.",
+      "confidence": 0.729
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-24T19:02:37Z",
+  "timing": {
+    "heard_at": "2026-09-24T19:58:56Z",
+    "first_heard_at": "2026-09-24T19:02:37Z",
+    "atis_issued_at": "2026-09-24T18:50:00Z",
+    "atis_age_min_when_heard": 69,
+    "published_at": "2026-09-24T19:59:38Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-24T20:13:56Z"
+  },
+  "missing_required": [
+    "temperature",
+    "qnh"
+  ]
+}
