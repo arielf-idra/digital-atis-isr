@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["atis/**", "site/**", "scripts/**", ".github/workflows/atis.yml"]
+    paths: ["atis/**", "site/**", "scripts/**", "tests/**", "requirements.txt", "pyproject.toml", ".github/workflows/atis.yml"]
 
 concurrency:
   group: atis
