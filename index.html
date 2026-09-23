@@ -36,7 +36,8 @@
             place-items: center; background: var(--ink); color: var(--card); flex: none; }
   .top h2 { margin: 0; font-size: 24px; }
   .meta { color: var(--muted); font-size: 15px; }
-  .text { font-size: 19px; line-height: 1.6; margin: 0; }
+  .text { font-size: 17px; line-height: 1.6; margin: 0; }
+  h3 { font-size: 14px; font-weight: 600; color: var(--muted); margin: 0 0 8px; }
   audio { width: 100%; margin-top: 14px; }
   .fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
   .field { border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
@@ -94,13 +95,14 @@
       <dt>ATIS valid from</dt><dd id="issued">—</dd>
       <dt>Next check</dt><dd id="next">—</dd>
     </dl>
-    <p class="text" id="text"></p>
-    <audio id="audio" controls preload="none"></audio>
+    <div class="fields" id="fields"></div>
+    <p class="metar" id="metar"></p>
   </section>
 
   <section class="card">
-    <div class="fields" id="fields"></div>
-    <p class="metar" id="metar"></p>
+    <h3>Full ATIS text</h3>
+    <p class="text" id="text"></p>
+    <audio id="audio" controls preload="none"></audio>
   </section>
 
   <section class="card">
