@@ -1,31 +1,29 @@
-"""Capture ATIS repeatedly and publish to the gh-pages worktree.
+"""Capture ATIS continuously and publish to the gh-pages worktree.
 
-Runs inside one GitHub Actions job for ~50 minutes. The gh-pages branch is kept
-as a single amended commit so audio files don't accumulate in git history.
-Pushes happen when the ATIS content changes, or as a heartbeat so the site can
-show the data is fresh; this keeps GitHub Pages builds well under its hourly limit.
+Runs inside one GitHub Actions job for ~50 minutes. While one recording is
+being transcribed the next one is already being recorded, so a fresh check is
+published about every `--seconds` (3 minutes by default).
+
+The gh-pages branch is kept as a single amended commit so audio files don't
+accumulate in git history. The web page is served from main, so pushes here
+don't trigger GitHub Pages builds.
 """
 
 import argparse
-import json
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from atis import audio  # noqa: E402
 from atis.__main__ import main as capture  # noqa: E402
+from atis.stations import STATIONS  # noqa: E402
 
-VOLATILE = {"checked_at", "transcripts", "text"}
-
-
-def signature(path: Path) -> str:
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, ValueError):
-        return ""
-    return json.dumps({k: v for k, v in data.items() if k not in VOLATILE}, sort_keys=True)
+RETRY_PAUSE_SEC = 30
 
 
 def git(pages: Path, *args: str) -> None:
@@ -38,40 +36,64 @@ def publish(pages: Path) -> None:
     git(pages, "push", "--force", "--quiet", "origin", "HEAD:gh-pages")
 
 
+def utc_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pages", type=Path, required=True)
     ap.add_argument("--stations", nargs="+", default=["LLHA"])
     ap.add_argument("--minutes", type=float, default=50)
-    ap.add_argument("--interval", type=int, default=300, help="seconds between capture starts")
-    ap.add_argument("--heartbeat", type=int, default=600, help="max seconds between pushes")
+    ap.add_argument("--seconds", type=int, default=180, help="length of each recording")
     args = ap.parse_args()
 
     shutil.copy2(Path(__file__).resolve().parent.parent / "index.html", args.pages / "index.html")
     (args.pages / ".nojekyll").touch()
 
+    tmp = Path(tempfile.mkdtemp())
     deadline = time.monotonic() + args.minutes * 60
-    last_push = 0.0
-    failures = 0
-    while time.monotonic() < deadline:
-        started = time.monotonic()
-        before = {s: signature(args.pages / "data" / s / "latest.json") for s in args.stations}
+    counter = 0
+
+    def start_all() -> dict:
+        nonlocal counter
+        counter += 1
+        pending = {}
         for s in args.stations:
+            path = tmp / f"{s}-{counter}.wav"
+            pending[s] = (audio.start_recording(STATIONS[s].stream_url, args.seconds, path), path)
+        return pending
+
+    pending = start_all()
+    while pending:
+        ready = {}
+        for s, (proc, path) in pending.items():
             try:
-                rc = capture([s, "--out", str(args.pages / "data")])
+                ready[s] = (audio.finish_recording(proc, args.seconds, path), utc_iso(), None)
+            except audio.CaptureError as exc:
+                ready[s] = (None, utc_iso(), str(exc))
+
+        all_failed = all(err for _, _, err in ready.values())
+        if all_failed:
+            time.sleep(RETRY_PAUSE_SEC)  # stream down: retry calmly instead of spinning
+        # Start the next recordings before processing, so listening never pauses.
+        more = time.monotonic() + args.seconds < deadline
+        pending = start_all() if more else {}
+
+        for s, (wav, heard_at, err) in ready.items():
+            argv = [s, "--out", str(args.pages / "data")]
+            argv += ["--error", err] if err else ["--wav", str(wav), "--heard-at", heard_at]
+            try:
+                capture(argv)
             except Exception as exc:  # never let one bad cycle kill the job
                 print(f"{s}: unexpected error {exc!r}", flush=True)
-                rc = 1
-            failures = failures + 1 if rc else 0
-        changed = any(signature(args.pages / "data" / s / "latest.json") != before[s] for s in args.stations)
-        if changed or time.monotonic() - last_push >= args.heartbeat:
-            try:
-                publish(args.pages)
-                last_push = time.monotonic()
-                print("published" + (" (changed)" if changed else " (heartbeat)"), flush=True)
-            except subprocess.CalledProcessError as exc:
-                print(f"push failed: {exc}", flush=True)
-        time.sleep(max(0, args.interval - (time.monotonic() - started)))
+            if wav:
+                wav.unlink(missing_ok=True)
+        try:
+            publish(args.pages)
+            print(f"published {utc_iso()}", flush=True)
+        except subprocess.CalledProcessError as exc:
+            print(f"push failed: {exc}", flush=True)
     return 0
 
 

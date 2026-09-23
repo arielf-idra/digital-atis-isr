@@ -1,10 +1,12 @@
 name: ATIS
 
+# Continuous capture on GitHub Actions.
+# Each run listens for ~50 minutes (a check every ~3 minutes) and then starts the
+# next run itself, so the chain doesn't depend on GitHub's cron, which is often
+# late or skipped. The cron below only restarts the chain if it ever breaks.
 on:
   schedule:
-    # Each run works for ~50 min; the concurrency group queues the next one,
-    # so runs chain back to back even when GitHub delays scheduled starts.
-    - cron: "*/20 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -12,7 +14,8 @@ on:
 
 concurrency:
   group: atis
-  cancel-in-progress: false
+  # New code takes over immediately; otherwise runs queue behind the active one.
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 permissions:
   contents: write
@@ -20,6 +23,7 @@ permissions:
 
 jobs:
   test:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,6 +36,7 @@ jobs:
 
   capture:
     needs: test
+    if: ${{ !cancelled() && (needs.test.result == 'success' || needs.test.result == 'skipped') }}
     runs-on: ubuntu-latest
     timeout-minutes: 58
     steps:
@@ -69,8 +74,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/atis.yml/enable"
 
-      - name: Capture and publish
-        # A push-triggered run just deploys the new site and one fresh reading.
-        run: >
-          python scripts/publish_loop.py --pages pages
-          --minutes ${{ github.event_name == 'push' && '1' || '50' }}
+      - name: Capture and publish (~50 min)
+        run: python scripts/publish_loop.py --pages pages --minutes 50
+
+      - name: Start the next run
+        # workflow_dispatch is one of the few events a workflow may trigger with its own token.
+        if: ${{ !cancelled() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run atis.yml --ref main

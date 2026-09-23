@@ -4,9 +4,23 @@ Listens to broadcast ATIS audio and publishes it as text.
 
 **Live:** https://arielf-idra.github.io/digital-atis-isr/
 
-> ⚠️ **Not for operational use.** This is an unofficial, automatic speech-to-text
-> transcription. It can be wrong, late or offline. Always listen to the official
-> ATIS on frequency.
+## Disclaimer
+
+**UNOFFICIAL — NOT FOR OPERATIONAL USE.**
+
+- This is an automatic speech-to-text transcription of a publicly streamed ATIS
+  broadcast. It **can be wrong, incomplete, late or unavailable** at any time,
+  without notice.
+- It is **not** provided, approved or endorsed by the Israel Airports Authority,
+  any air navigation service provider, airport, or the owners of the audio stream.
+- It must **not** be used for flight planning, navigation, or any decision affecting
+  safety. **Always obtain the official ATIS on frequency** (and official weather)
+  before flight.
+- Provided "as is", without warranty of any kind. Use entirely at your own risk.
+  The authors accept no liability for any use of this information.
+
+The same notice is included in every data response as the `disclaimer` field. Apps
+that use the data must show it to their users.
 
 ## Stations
 
@@ -50,7 +64,8 @@ web page.
    `gh-pages` branch. The audio clip lets anyone check the text by ear.
 
 If the stream is down, the last good ATIS stays on the page with an **offline** banner.
-The page also warns when the data is more than 20 minutes old.
+The page shows, live, how long ago the ATIS was heard and when it was issued, and
+warns when the data is more than 15 minutes old.
 
 ## Using the data in other apps
 
@@ -63,16 +78,37 @@ so browser apps can call it directly.
 | Recent ATIS list | `https://raw.githubusercontent.com/arielf-idra/digital-atis-isr/gh-pages/data/LLHA/history.json` |
 | Audio of the current ATIS | `https://raw.githubusercontent.com/arielf-idra/digital-atis-isr/gh-pages/data/LLHA/latest.mp3` |
 
-Replace `LLHA` with any supported ICAO code. The files update every few minutes and
-may be cached for up to 5 minutes.
+Replace `LLHA` with any supported ICAO code. A new check is published about every
+3 minutes; GitHub may cache the file for up to 5 more minutes.
+
+**How old is it?** The file is static, so it can't know when you read it. Use the
+`timing` block and your own clock:
+
+```json
+"timing": {
+  "heard_at": "2026-09-23T09:33:07Z",        // end of the recording this data is based on
+  "first_heard_at": "2026-09-23T09:32:15Z",  // when this letter/issue was first heard
+  "atis_issued_at": "2026-09-23T08:50:00Z",  // the ATIS "valid from" time
+  "atis_age_min_when_heard": 43,
+  "published_at": "2026-09-23T09:33:49Z",
+  "check_interval_min": 3,
+  "stale_after": "2026-09-23T09:48:07Z"      // treat as out of date after this
+}
+```
+
+- Minutes since last heard = `now − heard_at`
+- Age of the ATIS = `now − atis_issued_at`
+- If `now > stale_after`, the service has stopped updating: don't show the data as current.
 
 `latest.json`, trimmed:
 
 ```json
 {
   "station": {"icao": "LLHA", "name": "Haifa", "frequency": "135.400"},
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. ...",
   "checked_at": "2026-09-23T06:44:10Z",
   "first_seen": "2026-09-23T06:40:02Z",
+  "timing": { ... },
   "status": "ok",
   "quality": "good",
   "letter": "F",
@@ -92,13 +128,14 @@ may be cached for up to 5 minutes.
 - `metar`: the cross-check: `raw`, `time`, `matched` (whether this is the METAR the ATIS was built from),
   `checks.<field>` = `{"metar": value, "agree": true|false|null}`, and `differs` (list of fields).
 - `fields.letter.method` is `acoustic` with a `confidence` (0–1) when the letter was scored from the audio.
-- Treat data as stale when `checked_at` is more than about 20 minutes old.
 
 ## Running on GitHub
 
-The [ATIS workflow](.github/workflows/atis.yml) runs on GitHub Actions. Each job
-checks the stream about every 4 minutes for 50 minutes, and a concurrency group
-queues the next job, so jobs follow each other without a gap. Results go to the
+The [ATIS workflow](.github/workflows/atis.yml) runs on GitHub Actions. Each run
+listens for about 50 minutes. It records 3 minutes at a time, and while one
+recording is being processed the next is already recording, so a fresh result is
+published about every 3 minutes. At the end, each run starts the next one itself
+(`workflow_dispatch`). A 15-minute schedule restarts the chain if it ever breaks. Results go to the
 `gh-pages` branch as one commit that is amended each time, so audio doesn't build
 up in git history. The web page (`index.html` on `main`) reads from there.
 

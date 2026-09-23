@@ -14,25 +14,42 @@ class CaptureError(RuntimeError):
     pass
 
 
-def record(url: str, seconds: int, out_path: Path, retries: int = 3) -> Path:
-    """Record `seconds` of the stream to a 16 kHz mono WAV using ffmpeg."""
-    cmd = [
+def _ffmpeg_cmd(url: str, seconds: int, out_path: Path) -> list[str]:
+    return [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_delay_max", "5",
         "-rw_timeout", "15000000",
         "-i", url,
         "-t", str(seconds), "-ac", "1", "-ar", str(SAMPLE_RATE), str(out_path),
     ]
-    last_err = ""
-    for _ in range(retries):
+
+
+def start_recording(url: str, seconds: int, out_path: Path) -> subprocess.Popen:
+    """Start recording in the background, so the previous sample can be processed meanwhile."""
+    return subprocess.Popen(_ffmpeg_cmd(url, seconds, out_path),
+                            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+
+
+def finish_recording(proc: subprocess.Popen, seconds: int, out_path: Path) -> Path:
+    try:
+        _, err = proc.communicate(timeout=seconds + 60)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+        err = "ffmpeg timed out"
+    if out_path.exists() and duration(out_path) >= seconds * 0.8:
+        return out_path
+    raise CaptureError(f"recording failed: {(err or '').strip() or 'recording too short'}")
+
+
+def record(url: str, seconds: int, out_path: Path, retries: int = 3) -> Path:
+    """Record `seconds` of the stream to a 16 kHz mono WAV using ffmpeg."""
+    for attempt in range(retries):
         try:
-            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=seconds + 60)
-            last_err = proc.stderr.strip()
-        except subprocess.TimeoutExpired:
-            last_err = "ffmpeg timed out"
-        if out_path.exists() and duration(out_path) >= seconds * 0.8:
-            return out_path
-    raise CaptureError(f"could not record {url}: {last_err or 'recording too short'}")
+            return finish_recording(start_recording(url, seconds, out_path), seconds, out_path)
+        except CaptureError:
+            if attempt == retries - 1:
+                raise
+    raise AssertionError("unreachable")
 
 
 def load(path: Path) -> np.ndarray:
