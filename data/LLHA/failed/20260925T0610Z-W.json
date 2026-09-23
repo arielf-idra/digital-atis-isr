@@ -1,0 +1,167 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-25T06:10:24Z",
+  "letter": "W",
+  "fields": {
+    "letter": {
+      "value": "W",
+      "votes": 3,
+      "of": 4,
+      "status": "majority",
+      "readings": [
+        "M",
+        "W"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "0550",
+      "votes": 2,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "0550"
+      ]
+    },
+    "runway": {
+      "value": null,
+      "votes": 1,
+      "of": 4,
+      "status": "conflict",
+      "readings": [
+        "33",
+        "15"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "10 km+"
+      ]
+    },
+    "clouds": {
+      "value": "SCT 3200ft",
+      "votes": 1,
+      "of": 4,
+      "status": "single",
+      "readings": [
+        "SCT 3200ft"
+      ]
+    },
+    "temperature": {
+      "value": 27,
+      "votes": 2,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        27
+      ]
+    },
+    "dewpoint": {
+      "value": 8,
+      "votes": 1,
+      "of": 4,
+      "status": "single",
+      "readings": [
+        8
+      ]
+    }
+  },
+  "text": "Haifa airport. Information whiskey. Valbrum 0550 UTC. Runway in use 15. Right hand circuit. Wind touchdown zone. Trade 40 degrees 9 knots. Visibility 10 kilometers or more. Cloudscad 3,200 feet, temperature 27, dew point 8, QNH, 1-0 in 4 milliars, for crimson start-up contact high, appear at 1-1-80, end information wiki.",
+  "loops": 4,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 5,
+  "conflicts": [
+    "runway"
+  ],
+  "metar": {
+    "raw": "METAR LLHA 250550Z AUTO 34008KT 9999 SCT032 27/18 Q1014",
+    "time": "2026-09-25T05:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1014,
+        "agree": null
+      },
+      "temperature": {
+        "metar": 27,
+        "agree": true
+      },
+      "dewpoint": {
+        "metar": 18,
+        "agree": false
+      },
+      "wind": {
+        "metar": "340/8kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "SCT 3200ft",
+        "agree": true
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": [
+      "dewpoint"
+    ]
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport, information whiskey. Valid from 0550 UEC. Runway in use between right hand circuit. Touchdown zone 340 degrees 9 knots. Visibility 10 kilometers or more. Cloudscatter triage 200 feet. Empature 27. 0.18. QN8, 1014 millibar. For current and startup contact type of clearance, 1.1 decimal at 0. End of information.",
+      "confidence": 0.59
+    },
+    {
+      "text": "Haifa airport information Whiskey. valid from 0550 UTC. Runway in use 3. Right hand circuit. Wind touchdown zone 340 degrees. 9 or not. Visibility 10 kilometers or more. Cloud's category doesn't 200 feet, temperature 210, dew point 108, 2NH, 1014 millibars, for clearance and start up on high for clearance 121 decimal 80, end of information whiskey.",
+      "confidence": 0.628
+    },
+    {
+      "text": "Haifa airport, information whiskey. Blood from 0550 UC. Runway in use 33. Right hand circuit. Touchdown zone, tray 40 degrees 9 knots. Visibility 10 kilometers or more. Cuts scattered 3200 feet. Temperature 27. DUPE 18, QH 1014 millibars. For clearance, start-up contact high-clearance 121-00. End of invasion, Whiskey.",
+      "confidence": 0.556
+    },
+    {
+      "text": "Haifa airport. Information whiskey. Valbrum 0550 UTC. Runway in use 15. Right hand circuit. Wind touchdown zone. Trade 40 degrees 9 knots. Visibility 10 kilometers or more. Cloudscad 3,200 feet, temperature 27, dew point 8, QNH, 1-0 in 4 milliars, for crimson start-up contact high, appear at 1-1-80, end information wiki.",
+      "confidence": 0.488
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-25T06:07:17Z",
+  "timing": {
+    "heard_at": "2026-09-25T06:10:24Z",
+    "first_heard_at": "2026-09-25T06:07:17Z",
+    "atis_issued_at": "2026-09-25T05:50:00Z",
+    "atis_age_min_when_heard": 20,
+    "published_at": "2026-09-25T06:11:18Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-25T06:25:24Z"
+  },
+  "missing_required": [
+    "runway",
+    "wind",
+    "qnh"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-25T10:22:20Z",
+  "letter": "A",
+  "fields": {
+    "letter": {
+      "value": "A",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "A"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "0950",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "0950"
+      ]
+    },
+    "runway": {
+      "value": "33",
+      "votes": 2,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "33"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "temperature": {
+      "value": 28,
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        28
+      ]
+    },
+    "dewpoint": {
+      "value": 18,
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        18
+      ]
+    },
+    "qnh": {
+      "value": 1014,
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        1014
+      ]
+    }
+  },
+  "text": "Haifa airport information Alpha. Ballad from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 33.0 degrees. 11 knots. Kevo K. Temperature 28, dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80, enter the information alpha.",
+  "loops": 3,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 7,
+  "conflicts": [],
+  "metar": {
+    "raw": "METAR LLHA 250950Z AUTO 32011KT CAVOK 28/18 Q1014",
+    "time": "2026-09-25T09:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1014,
+        "agree": true
+      },
+      "temperature": {
+        "metar": 28,
+        "agree": true
+      },
+      "dewpoint": {
+        "metar": 18,
+        "agree": true
+      },
+      "wind": {
+        "metar": "320/11kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "NSC",
+        "agree": null
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": null
+      }
+    },
+    "differs": []
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport information Alpha. Valid from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 33.0 degrees. 11 knots. Kevo K. Temperature 28, dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121 decimal 80. End of information alpha.",
+      "confidence": 0.672
+    },
+    {
+      "text": "Haifa airport information Alpha. Valid from 09 or 50 UTC. Runway in use treat 3. Right hand circuit. Wind touchdown zone. Treat 30 degrees. 11 knots. Kevo K. Temperature 28, dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121 decimal 80. End of information alpha.",
+      "confidence": 0.67
+    },
+    {
+      "text": "Haifa airport information Alpha. Ballad from 09 or 50 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone 33.0 degrees. 11 knots. Kevo K. Temperature 28, dew point 18. QNH 1014 millibars. For clearance and startup contact high for clearance 121.80, enter the information alpha.",
+      "confidence": 0.683
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-25T09:54:21Z",
+  "timing": {
+    "heard_at": "2026-09-25T10:22:20Z",
+    "first_heard_at": "2026-09-25T09:54:21Z",
+    "atis_issued_at": "2026-09-25T09:50:00Z",
+    "atis_age_min_when_heard": 32,
+    "published_at": "2026-09-25T10:23:03Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-25T10:37:20Z"
+  },
+  "missing_required": [
+    "wind"
+  ]
+}

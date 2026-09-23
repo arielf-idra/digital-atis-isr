@@ -1,0 +1,75 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-24T03:01:02Z",
+  "letter": null,
+  "fields": {},
+  "text": "Audits not available. Audits not available. Audits not available. But it's not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available.",
+  "loops": 1,
+  "complete_loops": false,
+  "quality": "poor",
+  "confirmed_fields": 0,
+  "conflicts": [],
+  "metar": {
+    "raw": "METAR LLHA 240250Z AUTO VRB03KT 9999 FEW030 23/18 Q1014",
+    "time": "2026-09-24T02:50Z",
+    "matched": false,
+    "checks": {
+      "qnh": {
+        "metar": 1014,
+        "agree": null
+      },
+      "temperature": {
+        "metar": 23,
+        "agree": null
+      },
+      "dewpoint": {
+        "metar": 18,
+        "agree": null
+      },
+      "wind": {
+        "metar": "VRB/3kt",
+        "agree": null
+      },
+      "clouds": {
+        "metar": "FEW 3000ft",
+        "agree": null
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": null
+      }
+    },
+    "differs": []
+  },
+  "transcripts": [
+    {
+      "text": "Audits not available. Audits not available. Audits not available. But it's not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available. Audits not available.",
+      "confidence": 0.934
+    }
+  ],
+  "model": "small.en",
+  "status": "unreadable",
+  "first_seen": "2026-09-23T22:05:05Z",
+  "timing": {
+    "heard_at": "2026-09-24T03:01:02Z",
+    "first_heard_at": "2026-09-23T22:05:05Z",
+    "atis_issued_at": null,
+    "atis_age_min_when_heard": null,
+    "published_at": "2026-09-24T03:01:20Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-24T03:16:02Z"
+  },
+  "missing_required": [
+    "runway",
+    "wind",
+    "temperature",
+    "qnh"
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "disclaimer": "UNOFFICIAL - NOT FOR OPERATIONAL USE. Automatic speech-to-text transcription of the broadcast ATIS. It may be wrong, incomplete, late or unavailable. It is not approved by, or affiliated with, any air navigation service provider or airport. Always obtain the official ATIS on frequency before flight. Use entirely at your own risk.",
+  "source": "audio",
+  "station": {
+    "icao": "LLHA",
+    "name": "Haifa",
+    "frequency": "135.400",
+    "source": "https://llha.yarintw.com/ATIS.mp3"
+  },
+  "checked_at": "2026-09-24T14:34:43Z",
+  "letter": "N",
+  "fields": {
+    "letter": {
+      "value": "N",
+      "votes": 4,
+      "of": 4,
+      "status": "confirmed",
+      "readings": [
+        "N"
+      ],
+      "method": "acoustic",
+      "confidence": 1.0
+    },
+    "time": {
+      "value": "1350",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "1350"
+      ]
+    },
+    "runway": {
+      "value": "33",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "33"
+      ]
+    },
+    "circuit": {
+      "value": "right",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "right"
+      ]
+    },
+    "wind": {
+      "value": "330/9kt V300-360",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "330/9kt V300-360"
+      ]
+    },
+    "visibility": {
+      "value": "10 km+",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "10 km+"
+      ]
+    },
+    "clouds": {
+      "value": "SCT 2800ft",
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        "SCT 2800ft"
+      ]
+    },
+    "temperature": {
+      "value": 28,
+      "votes": 2,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        28
+      ]
+    },
+    "dewpoint": {
+      "value": 20,
+      "votes": 3,
+      "of": 3,
+      "status": "confirmed",
+      "readings": [
+        20
+      ]
+    },
+    "qnh": {
+      "value": null,
+      "votes": 1,
+      "of": 3,
+      "status": "conflict",
+      "readings": [
+        1014,
+        1015
+      ]
+    }
+  },
+  "text": "Haifa airport, information November. Valid from 1350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 330 degrees. 9 or knots. Varying between 300 and 360 degrees. Visibility 10 kilometers or more. Clouds scattered 2800 feet. Temperature 28, dew point 20. QNH 1014 millibars for clearance and startup contact high for clearance 121 decimal 8-0. End of information November.",
+  "loops": 3,
+  "complete_loops": true,
+  "quality": "partial",
+  "confirmed_fields": 9,
+  "conflicts": [
+    "qnh"
+  ],
+  "metar": {
+    "raw": "METAR LLHA 241350Z AUTO 33011KT 9999 SCT028 28/21 Q1014",
+    "time": "2026-09-24T13:50Z",
+    "matched": true,
+    "checks": {
+      "qnh": {
+        "metar": 1014,
+        "agree": null
+      },
+      "temperature": {
+        "metar": 28,
+        "agree": true
+      },
+      "dewpoint": {
+        "metar": 21,
+        "agree": false
+      },
+      "wind": {
+        "metar": "330/11kt",
+        "agree": true
+      },
+      "clouds": {
+        "metar": "SCT 2800ft",
+        "agree": true
+      },
+      "visibility": {
+        "metar": "10 km+",
+        "agree": true
+      }
+    },
+    "differs": [
+      "dewpoint"
+    ]
+  },
+  "transcripts": [
+    {
+      "text": "Haifa airport, information November. Valid from 1350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone, 330 degrees. 9 or knots. Varying between 300 and 360 degrees. Visibility 10 kilometers or more. Clouds scattered 2800 feet. Temperature 28, dew point 20. QNH 1014 millibars for clearance and startup contact high for clearance 121 decimal 8-0. End of information November.",
+      "confidence": 0.775
+    },
+    {
+      "text": "Haifa airport, information November. Valid from 1350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 30 degrees. 9 knots. Varying between 300 and 360 degrees. Visibility 10 kilometers or more. Clouds scattered 2800 feet. Temperature 28, dew point 20. QNH 1015 hectopascals. for clearance and start-up contact high for clearance 121 decimal 8-0. End of information November.",
+      "confidence": 0.716
+    },
+    {
+      "text": "Haifa airport, information November. Valid from 1350 UTC. Runway in use 33. Right hand circuit. Wind touchdown zone. Tree 30 degrees. 9 or knots. Varying between 300 and 360 degrees. Visibility 10 kilometers or more. Clouds scattered 2,800 feet. Temperature to 8. Dew point two zero. Two NH. One zero one four millibars. For clearance and start up contact high for clearance one two one decimal eight zero. End of information November.",
+      "confidence": 0.757
+    }
+  ],
+  "model": "small.en",
+  "status": "ok",
+  "first_seen": "2026-09-24T13:58:17Z",
+  "timing": {
+    "heard_at": "2026-09-24T14:34:43Z",
+    "first_heard_at": "2026-09-24T13:58:17Z",
+    "atis_issued_at": "2026-09-24T13:50:00Z",
+    "atis_age_min_when_heard": 45,
+    "published_at": "2026-09-24T14:35:29Z",
+    "check_interval_min": 3,
+    "stale_after": "2026-09-24T14:49:43Z"
+  },
+  "missing_required": [
+    "qnh"
+  ]
+}
