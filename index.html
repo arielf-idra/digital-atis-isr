@@ -204,6 +204,10 @@ function tick() {
   } else if (stale) {
     banner.className = "banner bad";
     banner.textContent = `Not updated for ${duration(now - Date.parse(t.heard))} — may be out of date.`;
+  } else if (d.missing_required && d.missing_required.length) {
+    const names = { runway: "runway", wind: "wind", temperature: "temperature", qnh: "QNH" };
+    banner.className = "banner bad";
+    banner.textContent = `Could not read the ${d.missing_required.map(k => names[k] || k).join(", ")} — listen to the recording below.`;
   } else if (d.status === "unreadable" || d.quality === "poor") {
     banner.className = "banner bad";
     banner.textContent = "The latest broadcast could not be read clearly. Listen to the recording below.";

@@ -20,6 +20,7 @@ concurrency:
 permissions:
   contents: write
   actions: write
+  issues: write
 
 jobs:
   test:
@@ -75,6 +76,8 @@ jobs:
         run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/atis.yml/enable"
 
       - name: Capture and publish (~50 min)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}   # to open an issue for broadcasts that fail to decode
         run: python scripts/publish_loop.py --pages pages --minutes 50
 
       - name: Start the next run

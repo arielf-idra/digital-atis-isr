@@ -129,6 +129,23 @@ Replace `LLHA` with any supported ICAO code. A new check is published about ever
   `checks.<field>` = `{"metar": value, "agree": true|false|null}`, and `differs` (list of fields).
 - `fields.letter.method` is `acoustic` with a `confidence` (0–1) when the letter was scored from the audio.
 
+## Broadcasts that fail to decode
+
+Every ATIS must give **runway, wind, temperature and QNH**. If any of them can't
+be read, the system:
+
+- shows a red "Could not read the …" banner on the page and lists the fields in
+  `missing_required` in the JSON;
+- keeps the recording and all transcripts in
+  [`gh-pages/data/<ICAO>/failed/`](https://github.com/arielf-idra/digital-atis-isr/tree/gh-pages/data/LLHA/failed)
+  (the last 100);
+- opens a [GitHub issue labelled `decode-failure`](https://github.com/arielf-idra/digital-atis-isr/issues?q=label%3Adecode-failure)
+  with the missing fields, every repetition's transcript, the METAR and a link to
+  the recording. Each broadcast (letter + issue time) is reported once.
+
+GitHub emails the repository owner about new issues. Review them to find phrases
+the decoder should learn, and add the transcripts as test fixtures.
+
 ## Running on GitHub
 
 The [ATIS workflow](.github/workflows/atis.yml) runs on GitHub Actions. Each run

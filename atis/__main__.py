@@ -12,7 +12,7 @@ import traceback
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from . import audio, consensus, metar, parse, transcribe
+from . import audio, consensus, failures, metar, parse, transcribe
 from .stations import STATIONS
 
 HISTORY_LIMIT = 96
@@ -190,7 +190,12 @@ def main(argv: list[str] | None = None) -> int:
         "check_interval_min": CHECK_INTERVAL_MIN,
         "stale_after": iso(heard + timedelta(minutes=STALE_AFTER_MIN)),
     }
+    record["missing_required"] = failures.missing_required(result["fields"])
+    if record["missing_required"] and record["quality"] == "good":
+        record["quality"] = "partial"
     write_json(latest_path, record)
+    if record["missing_required"]:
+        failures.record(out, record, record["missing_required"])
 
     history = read_json(history_path, [])
     if result["letter"] and (not history or (history[0]["letter"], history[0].get("time")) != key):

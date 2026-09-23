@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from atis import audio  # noqa: E402
+from atis import audio, failures  # noqa: E402
 from atis.__main__ import main as capture  # noqa: E402
 from atis.stations import STATIONS  # noqa: E402
 
@@ -94,6 +94,13 @@ def main() -> int:
             print(f"published {utc_iso()}", flush=True)
         except subprocess.CalledProcessError as exc:
             print(f"push failed: {exc}", flush=True)
+        # After the push, so the recording linked from the issue already exists.
+        for s in args.stations:
+            try:
+                if n := failures.report(args.pages / "data", s):
+                    print(f"{s}: opened {n} decode-failure issue(s)", flush=True)
+            except Exception as exc:
+                print(f"{s}: failure report skipped: {exc!r}", flush=True)
     return 0
 
 
